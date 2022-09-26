@@ -1,12 +1,13 @@
-import { Link } from "gatsby";
 import React from "react";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
-import CCALogo from "../assets/council-logo/CCA_RGB_colour_f.svg";
-import heroImage from "../assets/hero-image.png";
+import DesktopHero from "../components/DesktopHero/DesktopHero";
 
 import {
   hero,
   bgWrapper,
+  desktopImgStyles,
   artistsNav,
   extraNav,
   yolanda,
@@ -22,14 +23,20 @@ import {
   dylan,
   liliona,
   olivia,
+  homeFooter,
+  ccaLogo,
+  credits
 } from "./index.module.scss";
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const { images } = data.contentfulSitePage;
+  const [desktopHeroImg] = images;
+
   return (
     <>
       <main className={hero}>
         <div className={bgWrapper}>
-          <img src={heroImage} alt="" />
+          <DesktopHero desktopHeroImage={desktopHeroImg} />
           <nav
             className={artistsNav}
             aria-label="Primary site navigation to each artist's page"
@@ -45,7 +52,9 @@ const IndexPage = () => {
                 <Link to="/william-hunt-fan-wu">William Hunt & Fan Wu</Link>
               </li>
               <li className={laura}>
-                <Link to="/laura-gallagher-doucette">Laura Gallagher-Doucette</Link>
+                <Link to="/laura-gallagher-doucette">
+                  Laura Gallagher-Doucette
+                </Link>
               </li>
               <li className={rihkee}>
                 <Link to="/rihkee-strapp">Rihkee Strapp</Link>
@@ -92,11 +101,13 @@ const IndexPage = () => {
           </ul>
         </nav>
       </main>
-      <footer>
-        <div>
-          <img src={CCALogo} alt="Logo for the Canada Council for the Arts" />
-        </div>
-        <div>
+      <footer className={homeFooter}>
+        <StaticImage
+          src="../assets/CCA_RGB_white_e.png"
+          alt="Logo for the Canada Council for the Arts"
+          className={ccaLogo}
+        />
+        <div className={credits}>
           <p>
             homepage artwork by{" "}
             <a
@@ -124,5 +135,21 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    contentfulSitePage(slug: { eq: "home" }) {
+      pageTitle
+      images {
+        url
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 1150
+        )
+        description
+      }
+    }
+  }
+`;
 
 export { Head } from "../components/Head/Head";

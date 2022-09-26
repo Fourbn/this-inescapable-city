@@ -1,5 +1,5 @@
 .hero {
-  height: 99vh;
+  height: calc(100vh - 94.95px);
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -16,20 +16,6 @@
 
     @include break('tablet') {
       width: 100%;
-    }
-
-    img {
-      position: relative;
-      top: 50px;
-      max-height: 100%;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      display: block;
-
-      @include break('tablet') {
-        top: 0;
-      }
     }
   }
 
@@ -111,5 +97,34 @@
   .extra-nav {
     order: 1;
     padding: 3rem 0 3rem 4.5rem;
+  }
+}
+
+.home-footer {
+  background-color: shade($river-blue, 30%);
+  padding: 2rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .cca-logo {
+    max-width: 300px;
+  }
+  .credits {
+    p {
+      font-size: 1.6rem;
+      color: $grey-bg;
+      text-align: right;
+
+      a {
+        font-size: inherit;
+        color: $thistle;
+        text-decoration: underline solid transparent;
+        transition: text-decoration 0.3s;
+        &:hover {
+          text-decoration: underline solid $thistle;
+        }
+      }
+    }
   }
 }

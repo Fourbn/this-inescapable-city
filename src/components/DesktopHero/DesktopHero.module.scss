@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+}
+
+.svg-styles {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: -20px;
+  display: none;
+}
+
+.gatsby-img {
+  position: relative;
+  max-height: calc(100vh - 94.95px);
+  top: -20px;
+
+  img {
+    object-position: top;
+  }
+}
