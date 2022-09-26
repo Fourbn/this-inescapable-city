@@ -1,0 +1,41 @@
+.definition {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: 4rem;
+    line-height: 1.4;
+  }
+  p {
+    line-height: 1.15;
+
+    &:nth-of-type(2) {
+      font-style: italic;
+    }
+  }
+}
+
+.poem {
+  margin-bottom: 2.5rem;
+  h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-decoration: 1px solid underline;
+  }
+
+  ol {
+    margin-left: 2rem;
+    li {
+      list-style-type: decimal;
+      font-size: 1.3rem;
+      span {
+        font-size: 1.8rem;
+        margin-left: -3px;
+      }
+
+      @include break('mobile') {
+        margin-bottom: 1rem;
+      }
+    }
+  } 
+  
+}

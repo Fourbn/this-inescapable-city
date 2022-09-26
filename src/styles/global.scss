@@ -1,0 +1,201 @@
+@import "normalize";
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+a {
+  padding: 0;
+  margin: 0;
+  color: $deep-waters;
+  font-size: 1.8rem;
+  font-family: $main-font;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 5.6rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  @include break('tablet') {
+    font-size: 5rem;
+  }
+  @include break('mobile') {
+    margin-bottom: 5rem;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  position: relative;
+  background-color: $grey-bg;
+}
+
+.grid-wrapper,
+section {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4% repeat(36, 1.527778%) 4%;
+  grid-column-gap: 1%;
+
+  @include break('tablet') {
+    max-width: 1024px;
+    grid-template-columns: 4% repeat(24, 2.79591%) 4%;
+    grid-column-gap: 1%;
+  }
+
+  @include break('mobile') {
+    max-width: 749px;
+    grid-template-columns: 3% repeat(12, 5.666%) 3%;
+    grid-column-gap: 2%;
+  }
+}
+
+main>section:first-child {
+  padding: 5rem 0;
+  min-height: 100vh;
+}
+
+section {
+  &>* {
+    grid-column: 4 / -4;
+
+    @include break('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+}
+
+a {
+  color: $algae;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $rust;
+  }
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 0;
+  background-color: tint($thistle, 30%);
+  border: 2px solid tint($thistle, 30%);
+  border-radius: 3px;
+  padding: 1.5rem 3rem;
+  font-size: 1.8rem;
+  color: $deep-waters;
+  font-weight: 500;
+  font-family: $main-font;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $rust;
+    border-color: $rust;
+    color: $grey-bg;
+  }
+
+  &:disabled {
+    background-color: shade($grey-bg, 20%);
+    border-color: shade($grey-bg, 40%);
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      color: $deep-waters;
+    }
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(00 0 0);
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fading-in {
+  opacity: 0;
+  visibility: hidden;
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+}
+
+.fading-out {
+  opacity: 1;
+  visibility: visible;
+  animation-name: fadeOut;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0;
+}
+
+.visual-break {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.italics {
+  font-style: italic;
+}

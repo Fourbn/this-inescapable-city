@@ -1,0 +1,115 @@
+.hero {
+  height: 99vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .bg-wrapper {
+    order: 2;
+    position: relative;
+    height: auto;
+    width: 100%;
+    max-width: 1150px;
+    display: inline-block;
+    overflow: hidden;
+
+    @include break('tablet') {
+      width: 100%;
+    }
+
+    img {
+      position: relative;
+      top: 50px;
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+
+      @include break('tablet') {
+        top: 0;
+      }
+    }
+  }
+
+  .artists-nav li {
+    position: absolute;
+    max-width: 142px;
+    text-align: center;
+    padding: 1rem;
+    // background-color: rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+
+    &.yolanda {
+      left: 4%;
+      top: 9.5%;
+    }
+
+    &.lou {
+      left: 18.5%;
+      top: 9.5%;
+    }
+
+    &.will-fan {
+      left: 36%;
+      top: 9%;
+    }
+
+    &.laura {
+      left: 5%;
+      bottom: 5%;
+    }
+
+    &.rihkee {
+      left: 16%;
+      bottom: 0.5%;
+    }
+
+    &.stewart {
+      left: 29.5%;
+      bottom: -10px;
+    }
+
+    &.anita {
+      left: 40%;
+      bottom: 6%;
+    }
+
+    &.rowan {
+      left: 44%;
+      bottom: 21%;
+    }
+
+    &.francesca {
+      left: 54.5%;
+      bottom: 13.5%;
+    }
+
+    &.everette {
+      left: 60%;
+      bottom: 31%;
+    }
+
+    &.dylan {
+      left: 74%;
+      bottom: 12%;
+    }
+
+    &.liliona {
+      left: 75.5%;
+      bottom: 42.5%;
+    }
+
+    &.olivia {
+      left: 88%;
+      bottom: 34%;
+      width: 130px;
+    }
+  }
+
+  .extra-nav {
+    order: 1;
+    padding: 3rem 0 3rem 4.5rem;
+  }
+}

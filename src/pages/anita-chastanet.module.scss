@@ -1,0 +1,22 @@
+.cover-art-styles {
+  max-width: 400px;
+  justify-self: center;
+  margin: 4rem 0 2rem;
+}
+
+.lyrics {
+  text-align: center;
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+  & > p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.bio-styles {
+  p:nth-of-type(6) {
+    margin-top: 2rem;
+  }
+}

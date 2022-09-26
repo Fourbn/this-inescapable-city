@@ -1,0 +1,24 @@
+.header,
+.footer {
+  position: fixed;
+  z-index: 9999;
+}
+.header {
+  left: 15px;
+  top: 15px;
+}
+
+.footer {
+  right: 15px;
+  bottom: 15px;
+}
+
+.icon {
+  font-size: 5rem;
+  color: $river-blue;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $rust;
+  }
+}

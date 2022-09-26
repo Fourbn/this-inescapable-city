@@ -1,0 +1,21 @@
+.video-wrapper {
+  grid-column: 6 / -6;
+  margin: 1rem 0 4rem;
+
+  @include break('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+
+.caption {
+  text-align: right;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $thistle;
+  p {
+    font-size: 1.5rem;
+    @include break('mobile') {
+      font-size: 1.4rem;
+    }
+  }
+}

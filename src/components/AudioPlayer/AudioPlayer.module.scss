@@ -1,0 +1,54 @@
+.control-panel {
+  justify-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 7rem 0 4rem;
+  max-width: 400px;
+  position: relative;
+
+  // * { border: 1px solid red; }
+
+  .audio-button {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    margin: 0 2rem;
+
+    .icon {
+      font-size: 7rem;
+      color: $algae;
+      transition: color 0.3s;
+    }
+
+    &:hover .icon {
+      color: $rust;
+    }
+  }
+
+
+  .volume-styles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2rem;
+
+    &:hover .icon {
+      color: $rust;
+    }
+  }
+
+  input[type=range] {
+    height: 5px;
+    -webkit-appearance: none;
+    width: 70%;
+    margin: 4rem 5rem 0;
+    border-radius: 8px;
+    background: $deep-waters;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+  }
+}

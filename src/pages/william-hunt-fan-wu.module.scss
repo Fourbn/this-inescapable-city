@@ -1,0 +1,68 @@
+.images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8rem;
+
+  @include break('mobile') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.poem-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8rem;
+
+  @include break('mobile') {
+    grid-template-columns: 1fr;
+  }
+
+  .poem {
+    &:last-of-type {
+      grid-column: 1 / span 2;
+
+      @include break('mobile') {
+        grid-column: 1 / 2;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+
+    &.jump1 {
+      margin-left: 60px;
+    }
+
+    &.jump2 {
+      margin-left: 120px;
+    }
+
+    &.jump3 {
+      margin-left: 300px;
+    }
+
+    &.jump4 {
+      margin-left: 500px;
+    }
+
+    @include break('mobile') {
+      &.jump1,
+      &.jump2,
+      &.jump3,
+      &.jump4 {
+        margin-left: 40px !important;
+      }
+    }
+  }
+}
+
+.bio-styles {
+  p {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

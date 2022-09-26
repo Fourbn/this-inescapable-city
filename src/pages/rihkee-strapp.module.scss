@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative;
+  margin:  0 auto;
+}
+
+.image,
+.gif {
+  max-width: 550px !important;
+}
+
+.gif {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+.preload {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  img {
+    visibility: hidden;
+  }
+}

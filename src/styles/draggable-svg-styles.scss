@@ -1,0 +1,24 @@
+// global styles to be used on each draggable svg component to make sure it has a tight clickable area and not a boxy rectangle
+.draggable-svg {
+  position: relative;
+  pointer-events: none;
+
+  & > svg {
+    width: 100%;
+  }
+  
+  .path-map {
+    // border: 1px solid red;
+    cursor: pointer;
+    position: absolute;
+    pointer-events: none;
+
+    path {
+      pointer-events: visibleFill;
+    }
+  }
+
+  .artwork-svg {
+    pointer-events: none;
+  }
+}

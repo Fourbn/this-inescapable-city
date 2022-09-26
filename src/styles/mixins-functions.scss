@@ -1,0 +1,52 @@
+// tint & shade functions come from this css-tricks article: https: //css-tricks.com/snippets/sass/tint-shade-functions/
+
+// Slightly lighten a color
+// @access public
+// @param {Color} $color - color to tint
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Slightly darken a color
+// @access public
+// @param {Color} $color - color to shade
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+/* MEDIA QUERY BREAKPOINTS */
+@mixin break($breakpoint) {
+  @if $breakpoint=='mobile-small' {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='mobile' {
+    @media (max-width: 749px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='tablet' {
+    @media (max-width: 1032px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='desktop' {
+    @media (max-width: 1450px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}

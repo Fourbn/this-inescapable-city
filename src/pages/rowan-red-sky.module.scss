@@ -1,0 +1,72 @@
+.rowan-section {
+  h1 {
+    line-height: 1;
+  }
+}
+
+.container {
+  grid-column: 2 / -2;
+  height: 88vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../svg/land/probably-artwork-1_000.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & > div {
+    pointer-events: none;
+  }
+}
+
+.object {
+  position: relative;
+
+  &>div {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  button {
+    font-size: 40px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: -24px;
+    top: -24px;
+    z-index: 100;
+    transform: rotate(45deg);
+    cursor: pointer;
+    pointer-events: all;
+    padding: 0 1rem;
+    animation-duration: 0.3s !important;
+
+    &:hover,
+    &:focus {
+      color: $rust;
+    }
+  }
+}
+
+.object {
+  background-color: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  position: absolute;
+
+  svg {
+    position: relative;
+  }
+}
+
+.control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  button {
+    margin: 0 2rem;
+  }
+}
