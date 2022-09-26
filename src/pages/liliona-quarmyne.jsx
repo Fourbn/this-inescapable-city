@@ -24,7 +24,7 @@ const LilionaQuarmyne = () => {
   const [introIsVisible, setIntroIsVisible, introFadeProps] = useFade(true);
   const [showDivider, setShowDivider] = useState(true);
 
-  const handleIntroVideoEnded = (player) => {
+  const handleIntroVideoEnded = () => {
     setShowDivider(false);
     setIntroIsVisible(false);
   };
@@ -44,6 +44,7 @@ const LilionaQuarmyne = () => {
                 onEnded={handleIntroVideoEnded}
                 playing
                 controls={false}
+                divider={false}
               />
             </div>
           )}
