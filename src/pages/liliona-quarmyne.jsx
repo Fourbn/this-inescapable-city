@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import useFade from "../hooks/useFade";
 

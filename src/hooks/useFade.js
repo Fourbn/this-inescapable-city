@@ -1,6 +1,6 @@
 // code for this hook came from this blog: https://dev.to/ekeijl/simple-react-fade-animation-hook-5dp8
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const useFade = (initial) => {
   const [show, setShow] = useState(initial);
