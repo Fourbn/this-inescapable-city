@@ -30,8 +30,6 @@ import City125 from "../../svg/city/City125";
 import City130 from "../../svg/city/City130";
 import City135 from "../../svg/city/City135";
 
-// import { coords } from './LandImages.module.scss';
-
 const allImportsWithCoords = [
   { Import: City000, coords: { x: 0, y: 0 } },
   { Import: City005, coords: { x: 647, y: 230 } },
