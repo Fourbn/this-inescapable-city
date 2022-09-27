@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const CommentBox = ({ commenterName, comment }) => {
+import { box, riverBlue, thistle, deepWaters, rust, algae } from "./CommentBox.module.scss";
+
+const CommentBox = ({ comment, colorCycle }) => {
+  const bgColors = [riverBlue, thistle, deepWaters, rust, algae];
+
   return (
-    <div>
-      <h2>{commenterName}</h2>
+    <li className={`${box} ${bgColors[colorCycle]}`}>
+      <h2>The water remembers...</h2>
       <p>{comment}</p>
-    </div>
-  )
-}
+    </li>
+  );
+};
 
 export default CommentBox;

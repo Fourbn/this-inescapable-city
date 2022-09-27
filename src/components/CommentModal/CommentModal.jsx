@@ -13,7 +13,6 @@ import {
 
 const CommentModal = ({ setFade, fadeProps }) => {
   const [commentSubmitted, setCommentSubmitted] = useState(false);
-  const [userName, setUserName] = useState("");
   const [userComment, setUserComment] = useState("");
 
   const handleSubmitComment = (e) => {
@@ -23,16 +22,13 @@ const CommentModal = ({ setFade, fadeProps }) => {
     const dbRef = ref(database);
 
     const newComment = {
-      name: userName,
       comment: userComment,
-      likes: 0,
       displayOnSite: false,
     };
 
     push(dbRef, newComment);
     setCommentSubmitted(true);
     setUserComment("");
-    setUserName("");
   };
 
   return (
@@ -50,7 +46,7 @@ const CommentModal = ({ setFade, fadeProps }) => {
       <h2 className={prompt}>
         {commentSubmitted
           ? "Thank you for submitting your comment!"
-          : "The water remembers..."}
+          : "Add your artistry to the site!"}
       </h2>
       {commentSubmitted ? (
         <p className={instructions}>
@@ -66,19 +62,8 @@ const CommentModal = ({ setFade, fadeProps }) => {
       )}
       {!commentSubmitted && (
         <form action="submit" onSubmit={handleSubmitComment} className={form}>
-          <label htmlFor="name">
-            <p>Your Name</p>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              required
-            />
-          </label>
           <label htmlFor="comment">
-            <p>Your Response</p>
+            <p>The water remembers...</p>
             <textarea
               name="comment"
               id="comment"

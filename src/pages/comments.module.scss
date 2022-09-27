@@ -1,0 +1,14 @@
+.comments-hero {
+  align-items: start;
+  align-content: start;
+  h1 {
+    margin-bottom: 4rem;
+  }
+}
+
+.comment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 4rem;
+  justify-content: center;
+}

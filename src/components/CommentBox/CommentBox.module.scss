@@ -1,0 +1,23 @@
+.box {
+  padding: 2rem;
+
+  &.river-blue {
+    background-color: tint($river-blue, 60%);
+  }
+
+  &.thistle {
+    background-color: tint($thistle, 20%);
+  }
+
+  &.rust {
+    background-color: tint($rust, 50%);
+  }
+
+  &.deep-waters {
+    background-color: tint($deep-waters, 70%);
+  }
+
+  &.algae {
+    background-color: tint($algae, 40%);
+  }
+}
