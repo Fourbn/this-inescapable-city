@@ -1,4 +1,3 @@
-import "@firebase/database";
 import "@fontsource/spectral";
 import "@fontsource/spectral/300.css";
 import "@fontsource/spectral/500.css";

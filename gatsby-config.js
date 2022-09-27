@@ -36,20 +36,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-firebase",
-      options: {
-        credentials: {
-          apiKey: process.env.GATSBY_FB_API_KEY ,
-          authDomain: process.env.GATSBY_FB_AUTH_DOMAIN ,
-          projectId: process.env.GATSBY_FB_PROJECT_ID ,
-          storageBucket: process.env.GATSBY_FB_STORAGE_BUCKET ,
-          messagingSenderId: process.env.GATSBY_FB_MESSAGING_SENDER_ID ,
-          appId: process.env.GATSBY_FB_APP_ID ,
-          measurementId: process.env.GATSBY_FB_MEASUREMENT_ID ,
-        },
-      },
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",

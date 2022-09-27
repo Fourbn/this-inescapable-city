@@ -1,0 +1,79 @@
+.modal {
+  position: fixed;
+  max-width: 600px;
+  background-color: shade($river-blue, 10%);
+  padding: 5rem;
+  left: calc(50% - 300px);
+  top: 15%;
+  border-radius: 2px;
+  z-index: 9999;
+
+  .exit-button {
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    transform: rotate(45deg);
+    font-size: 6rem;
+    right: 7px;
+    top: -7px;
+    color: $grey-bg;
+    transition: color 0.3;
+
+    &:hover,
+    &:focus {
+      color: $rust;
+    }
+  }
+}
+
+.prompt {
+  color: $grey-bg;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.instructions {
+  color: $grey-bg;
+  margin: 1rem 0 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  label p {
+    color: $grey-bg;
+    margin-bottom: 5px;
+  }
+
+  input, 
+  textarea {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1rem;
+    font-family: $main-font;
+    color: $deep-waters;
+    border: 2px solid transparent;
+    background-color: $grey-bg;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    transition: border 0.3s, background-color 0.3s;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $rust;
+      background-color: tint($rust, 90%);
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    max-height: 150px;
+    min-height: 40px;
+  }
+
+  .submit-button {
+    margin-top: 2rem;
+  }
+}
