@@ -7,83 +7,23 @@ import DesktopHero from "../components/DesktopHero/DesktopHero";
 import {
   hero,
   bgWrapper,
-  artistsNav,
   extraNav,
-  yolanda,
-  lou,
-  willFan,
-  laura,
-  rihkee,
-  stewart,
-  anita,
-  rowan,
-  francesca,
-  everette,
-  dylan,
-  liliona,
-  olivia,
   homeFooter,
   ccaLogo,
   credits,
 } from "./index.module.scss";
+import MobileHero from "../components/MobileHero/MobileHero";
 
 const IndexPage = ({ data }) => {
   const { images } = data.contentfulSitePage;
-  const [desktopHeroImg] = images;
+  const [desktopHeroImg, mobileHeroImg] = images;
 
   return (
     <>
       <main className={hero}>
         <div className={bgWrapper}>
           <DesktopHero desktopHeroImage={desktopHeroImg} />
-          <nav
-            className={artistsNav}
-            aria-label="Primary site navigation to each artist's page"
-          >
-            <ul>
-              <li className={yolanda}>
-                <Link to="/yolanda-bonnell">Yolanda Bonnell</Link>
-              </li>
-              <li className={lou}>
-                <Link to="/lou-campbell">Lou Campbell</Link>
-              </li>
-              <li className={willFan}>
-                <Link to="/william-hunt-fan-wu">William Hunt & Fan Wu</Link>
-              </li>
-              <li className={laura}>
-                <Link to="/laura-gallagher-doucette">
-                  Laura Gallagher-Doucette
-                </Link>
-              </li>
-              <li className={rihkee}>
-                <Link to="/rihkee-strapp">Rihkee Strapp</Link>
-              </li>
-              <li className={stewart}>
-                <Link to="/stewart-legere">Stewart Legere</Link>
-              </li>
-              <li className={anita}>
-                <Link to="/anita-chastanet">Anita Chastanet</Link>
-              </li>
-              <li className={rowan}>
-                <Link to="/rowan-red-sky">Rowan Red Sky</Link>
-              </li>
-              <li className={francesca}>
-                <Link to="/francesca-ekwuyasi">francesca ekwuyasi</Link>
-              </li>
-              <li className={everette}>
-                <Link to="/everette-fournier">Everette Fournier</Link>
-              </li>
-              <li className={dylan}>
-                <Link to="/dylan-tate-howarth">Dylan Tate-Howarth</Link>
-              </li>
-              <li className={liliona}>
-                <Link to="/liliona-quarmyne">Liliona Quarmyne</Link>
-              </li>
-              <li className={olivia}>
-                <Link to="/olivia-shortt">Olivia Shortt</Link>
-              </li>
-            </ul>
-          </nav>
+          <MobileHero mobileHeroImage={mobileHeroImg} />
         </div>
         <nav
           className={extraNav}
@@ -143,7 +83,7 @@ export const query = graphql`
       pageTitle
       images {
         url
-        gatsbyImageData(layout: CONSTRAINED, width: 1150)
+        gatsbyImageData(layout: CONSTRAINED, width: 1050, placeholder: BLURRED)
         description
       }
     }
