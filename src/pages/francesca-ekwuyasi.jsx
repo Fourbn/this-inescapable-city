@@ -5,8 +5,6 @@ import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 
-import { bioStyles } from "./francesca-ekwuyasi.module.scss";
-
 const bio = `<p>francesca ekwuyasi is a learner, storyteller, and multidisciplinary artist from Lagos, Nigeria. Her work has explored themes of faith, family, queerness, consumption, loneliness, and belonging.</p>
 
 <p>francesca's debut novel, Butter Honey Pig Bread, was longlisted for the 2020 Giller Prize, was a finalist for CBC's 2021 Canada Reads, the 2021 Lambda Literary Award, the 2021 Governor General's Award, the 2021 Amazon Canada First Novel Award, and the 2021 ReLit Award. Butter Honey Pig Bread was recently longlisted for the 2022 Dublin Literary Award. Her story, Ọrun is Heaven, was longlisted for the 2019 Journey Prize.</p>
@@ -20,7 +18,7 @@ const FrancescaEkwuyasi = () => {
         <h1>francesca ekwuyasi</h1>
         <VideoPlayer url="https://vimeo.com/753123998/e84dc9e8cc" />
       </section>
-      <ArtistBio bio={bio} className={bioStyles} />
+      <ArtistBio bio={bio} />
     </Layout>
   );
 };

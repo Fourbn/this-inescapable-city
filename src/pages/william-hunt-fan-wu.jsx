@@ -9,7 +9,6 @@ import audio from "../assets/audio/will-fan-audio.m4a";
 
 import {
   imagesWrapper,
-  bioStyles,
   poemWrapper,
   poem,
   jump1,
@@ -163,7 +162,7 @@ const WilliamHuntFanWu = ({ data }) => {
           </div>
         </div>
       </section>
-      <ArtistBio bio={bio} plural className={bioStyles} />
+      <ArtistBio bio={bio} plural />
     </Layout>
   );
 };
