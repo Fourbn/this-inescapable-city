@@ -24,7 +24,7 @@ import {
   olivia,
   homeFooter,
   ccaLogo,
-  credits
+  credits,
 } from "./index.module.scss";
 
 const IndexPage = ({ data }) => {
@@ -91,7 +91,9 @@ const IndexPage = ({ data }) => {
         >
           <ul>
             <li>about</li>
-            <li>comments</li>
+            <li>
+              <Link to="/comments">Comments</Link>
+            </li>
             <li>instagram</li>
             <li>probably theatre</li>
             <li>extra bios</li>
@@ -141,10 +143,7 @@ export const query = graphql`
       pageTitle
       images {
         url
-        gatsbyImageData(
-          layout: CONSTRAINED
-          width: 1150
-        )
+        gatsbyImageData(layout: CONSTRAINED, width: 1150)
         description
       }
     }

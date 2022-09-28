@@ -14,3 +14,42 @@
     width: 50%;
   }
 }
+
+.hero {
+  h1 {
+    text-align: left;
+    max-width: 900px;
+  }
+}
+.instructions {
+  max-width: 900px;
+  margin: 0 0 2rem;
+}
+
+.comment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 4rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.comment-box {
+  padding: 2rem;
+  background-color: tint($river-blue, 60%);
+  &.algae {
+    background-color: tint($algae, 50%);
+  }
+
+  button {
+    margin: 2rem 2rem 0 0;
+  }
+}
+
+.comment-wrapper {
+  margin-bottom: 3rem;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -7,7 +7,15 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 import Layout from "../components/Layout/Layout";
 
-import { confirmationModal } from "./comments-backend.module.scss";
+import {
+  hero,
+  instructions,
+  confirmationModal,
+  commentWrapper,
+  commentList,
+  commentBox,
+  algae,
+} from "./comments-backend.module.scss";
 
 const CommentsBackend = () => {
   const [tbaComments, setTbaComments] = useState([]);
@@ -28,6 +36,13 @@ const CommentsBackend = () => {
       setTbaComments(newCommentsState);
     });
   }, []);
+
+  const handleDeleteComment = (commentKey) => {
+    const database = getDatabase(fbApp);
+    const dbRef = ref(database, `/${commentKey}`);
+
+    remove(dbRef);
+  };
 
   const handleConfirmDelete = (commentKey) => {
     confirmAlert({
@@ -54,11 +69,14 @@ const CommentsBackend = () => {
     });
   };
 
-  const handleDeleteComment = (commentKey) => {
+  const handleApproveComment = (commentKey) => {
     const database = getDatabase(fbApp);
     const dbRef = ref(database, `/${commentKey}`);
+    const approved = {
+      displayOnSite: true,
+    };
 
-    remove(dbRef);
+    update(dbRef, approved);
   };
 
   const handleConfirmApprove = (commentKey) => {
@@ -67,6 +85,7 @@ const CommentsBackend = () => {
       message: (
         <p>
           Once approved, this comment will appear on the public site. How scary!
+          You can always undo this action later.
         </p>
       ),
       buttons: [
@@ -85,46 +104,106 @@ const CommentsBackend = () => {
     });
   };
 
-  const handleApproveComment = (commentKey) => {
+  const handleHideComment = (commentKey) => {
     const database = getDatabase(fbApp);
     const dbRef = ref(database, `/${commentKey}`);
     const approved = {
-      displayOnSite: true,
+      displayOnSite: false,
     };
 
     update(dbRef, approved);
   };
 
+  const handleConfirmHide = (commentKey) => {
+    confirmAlert({
+      title: "Are you sure you want to hide this comment?",
+      message: (
+        <p>
+          Once hidden, this comment will disappear from the site. How spooky! You can always undo this action later.
+        </p>
+      ),
+      buttons: [
+        {
+          label: "Yes, hide it!",
+          onClick: () => handleHideComment(commentKey),
+        },
+        {
+          label: "No, I made a mistake.",
+          onClick: () => {
+            return;
+          },
+        },
+      ],
+      overlayClassName: confirmationModal,
+    });
+  };
+
   return (
     <Layout>
       <section>
-        <div>
+        <div className={hero}>
           <h1>Welcome to the Comments Backend!</h1>
-          <p>
+          <p className={instructions}>
             You can use this page to approve comments that will appear on the
             live site. Also, if you're seeing this and are not part of the
             Probably Theatre Collective team, get out of here! This is sneaky
             private business and for THEIR EYES ONLY! Promise you're supposed to
             be here? Okay great, enjoy the powers of clicking buttons.
           </p>
+          <p className={instructions}>
+            Please remember that when you delete something it is gone FOREVER!
+          </p>
         </div>
-        {tbaComments
-          .filter((commentObj) => !commentObj.comment.displayOnSite)
-          .map((commentObj) => {
-            const { key, comment } = commentObj;
-            return (
-              <div key={key}>
-                <p>{comment.comment}</p>
-                <p>{comment.displayOnSite ? "approved!" : "not approved!"}</p>
-                <button type="button" onClick={() => handleConfirmApprove(key)}>
-                  Approve
-                </button>
-                <button type="button" onClick={() => handleConfirmDelete(key)}>
-                  Delete
-                </button>
-              </div>
-            );
-          })}
+        <div className={commentWrapper}>
+          <h2>To be approved...</h2>
+          <ul className={commentList}>
+            {tbaComments
+              .filter((commentObj) => !commentObj.comment.displayOnSite)
+              .map((commentObj) => {
+                const { key, comment } = commentObj;
+                return (
+                  <li key={key} className={commentBox}>
+                    <h3>The water remembers...</h3>
+                    <p>{comment.comment}</p>
+                    <button
+                      type="button"
+                      onClick={() => handleConfirmApprove(key)}
+                    >
+                      Approve
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleConfirmDelete(key)}
+                    >
+                      Delete
+                    </button>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
+        <div className={commentWrapper}>
+          <h2>Visible on public site...</h2>
+          <ul className={commentList}>
+            {tbaComments
+              .filter((commentObj) => commentObj.comment.displayOnSite)
+              .map((commentObj) => {
+                const { key, comment } = commentObj;
+                return (
+                  <li key={key} className={`${commentBox} ${algae}`}>
+                    <h3>The water remembers...</h3>
+                    <p>{comment.comment}</p>
+                    <button
+                      type="button"
+                      onClick={() => handleConfirmHide(key)}
+                    >
+                      Hide from site
+                    </button>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
       </section>
     </Layout>
   );
