@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDatabase, ref, onValue, remove, update } from "firebase/database";
-import fbApp from "../firebase-config";
+import firebase from "gatsby-plugin-firebase";
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -21,27 +20,21 @@ const CommentsBackend = () => {
   const [tbaComments, setTbaComments] = useState([]);
 
   useEffect(() => {
-    const database = getDatabase(fbApp);
-
-    const dbRef = ref(database);
-
-    onValue(dbRef, (response) => {
-      const newCommentsState = [];
-      const fbData = response.val();
-
-      for (let key in fbData) {
-        newCommentsState.push({ key: key, comment: fbData[key] });
-      }
-
-      setTbaComments(newCommentsState);
-    });
+    firebase
+      .database()
+      .ref("/")
+      .on("value", (response) => {
+        const newCommentsState = [];
+        const fbData = response.val();
+        for (let key in fbData) {
+          newCommentsState.push({ key: key, comment: fbData[key] });
+        }
+        setTbaComments(newCommentsState);
+      });
   }, []);
 
   const handleDeleteComment = (commentKey) => {
-    const database = getDatabase(fbApp);
-    const dbRef = ref(database, `/${commentKey}`);
-
-    remove(dbRef);
+    firebase.database().ref(`/${commentKey}`).remove();
   };
 
   const handleConfirmDelete = (commentKey) => {
@@ -70,13 +63,10 @@ const CommentsBackend = () => {
   };
 
   const handleApproveComment = (commentKey) => {
-    const database = getDatabase(fbApp);
-    const dbRef = ref(database, `/${commentKey}`);
     const approved = {
       displayOnSite: true,
     };
-
-    update(dbRef, approved);
+    firebase.database().ref(`/${commentKey}`).update(approved);
   };
 
   const handleConfirmApprove = (commentKey) => {
@@ -105,13 +95,10 @@ const CommentsBackend = () => {
   };
 
   const handleHideComment = (commentKey) => {
-    const database = getDatabase(fbApp);
-    const dbRef = ref(database, `/${commentKey}`);
     const approved = {
       displayOnSite: false,
     };
-
-    update(dbRef, approved);
+    firebase.database().ref(`/${commentKey}`).update(approved);
   };
 
   const handleConfirmHide = (commentKey) => {
@@ -119,7 +106,8 @@ const CommentsBackend = () => {
       title: "Are you sure you want to hide this comment?",
       message: (
         <p>
-          Once hidden, this comment will disappear from the site. How spooky! You can always undo this action later.
+          Once hidden, this comment will disappear from the site. How spooky!
+          You can always undo this action later.
         </p>
       ),
       buttons: [

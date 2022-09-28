@@ -27,13 +27,29 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: [
-          process.env.GATSBY_G4_TRACKING_ID
-        ],
+        trackingIds: [process.env.GATSBY_G4_TRACKING_ID],
         pluginConfig: {
-          respectDNT: true
-        }
-      }
+          respectDNT: true,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        features: {
+          analytics: true,
+        },
+        credentials: {
+          apiKey: process.env.GATSBY_FB_API_KEY,
+          databaseURL: process.env.GATSBY_FB_DATABASE_URL,
+          authDomain: process.env.GATSBY_FB_AUTH_DOMAIN,
+          projectId: process.env.GATSBY_FB_PROJECT_ID,
+          storageBucket: process.env.GATSBY_FB_STORAGE_BUCKET,
+          messagingSenderId: process.env.GATSBY_FB_MESSAGING_SENDER_ID,
+          appId: process.env.GATSBY_FB_APP_ID,
+          measurementId: process.env.GATSBY_FB_MEASUREMENT_ID,
+        },
+      },
     },
     {
       resolve: "gatsby-source-filesystem",

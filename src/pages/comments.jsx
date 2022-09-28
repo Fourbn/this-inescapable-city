@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDatabase, ref, onValue } from "firebase/database";
-import fbApp from "../firebase-config";
+import firebase from "gatsby-plugin-firebase";
 
 import Layout from "../components/Layout/Layout";
 import CommentBox from "../components/CommentBox/CommentBox";
@@ -11,20 +10,19 @@ const Comments = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const database = getDatabase(fbApp);
-
-    const dbRef = ref(database);
-
-    onValue(dbRef, (response) => {
-      const newComments = [];
-      const fbData = response.val();
-
-      for (let key in fbData) {
-        newComments.push({ key: key, comment: fbData[key] });
-      }
-
-      setComments(newComments);
-    });
+    firebase
+      .database()
+      .ref("/")
+      .on("value", (response) => {
+        const newComments = [];
+        const fbData = response.val();
+  
+        for (let key in fbData) {
+          newComments.push({ key: key, comment: fbData[key] });
+        }
+  
+        setComments(newComments);
+      });
   }, []);
 
   const cardBgColorCycle = ((max) => {
@@ -39,7 +37,13 @@ const Comments = () => {
         <ul className={commentList}>
           {comments.map((commentObj) => {
             const { key, comment } = commentObj;
-            return <CommentBox key={key} comment={comment.comment} colorCycle={cardBgColorCycle()} />;
+            return (
+              <CommentBox
+                key={key}
+                comment={comment.comment}
+                colorCycle={cardBgColorCycle()}
+              />
+            );
           })}
         </ul>
       </section>

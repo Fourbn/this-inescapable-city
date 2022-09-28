@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { getDatabase, ref, push } from "firebase/database";
-import fbApp from "../../firebase-config";
+import firebase from "gatsby-plugin-firebase";
 
 import {
   modal,
@@ -18,15 +17,12 @@ const CommentModal = ({ setFade, fadeProps }) => {
   const handleSubmitComment = (e) => {
     e.preventDefault();
 
-    const database = getDatabase(fbApp);
-    const dbRef = ref(database);
-
     const newComment = {
       comment: userComment,
       displayOnSite: false,
     };
 
-    push(dbRef, newComment);
+    firebase.database().ref("/").push(newComment);
     setCommentSubmitted(true);
     setUserComment("");
   };

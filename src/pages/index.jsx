@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
           <ul>
             <li>about</li>
             <li>
-              <Link to="/comments">Comments</Link>
+              <Link to="/comments">comments</Link>
             </li>
             <li>instagram</li>
             <li>probably theatre</li>

@@ -1,3 +1,5 @@
+import "firebase/database";
+import "firebase/analytics";
 import "@fontsource/spectral";
 import "@fontsource/spectral/300.css";
 import "@fontsource/spectral/500.css";
