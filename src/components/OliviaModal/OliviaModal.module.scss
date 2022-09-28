@@ -1,0 +1,47 @@
+.modal {
+  position: absolute;
+  width: 200px;
+  background-color: lightgrey;
+  border-style: outset;
+  z-index: 999;
+
+  p {
+    text-align: center;
+    padding: 2rem;
+    margin: auto;
+  }
+
+  .top-bar {
+    background: linear-gradient(to right, blue, skyblue);
+    text-align: right;
+    padding: 5px;
+    width: 100%;
+
+    button {
+      background-color: lightgrey;
+      border: 1px solid black;
+      border-style: outset;
+      border-radius: 0;
+      padding: 0;
+      width: 18px;
+      height: 18px;
+      font-size: 3.5rem;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        color: inherit;
+      }
+
+      span {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        top: -9.5px;
+        left: 6px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
