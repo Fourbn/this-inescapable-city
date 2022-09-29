@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firebase from "gatsby-plugin-firebase";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 import CommentBox from "../components/CommentBox/CommentBox";
@@ -113,3 +114,13 @@ const Comments = () => {
 };
 
 export default Comments;
+
+export const query = graphql`
+  query {
+    contentfulSitePage(slug: { eq: "comments" }) {
+      pageTitle
+    }
+  }
+`;
+
+export { Head } from "../components/Head/Head";
