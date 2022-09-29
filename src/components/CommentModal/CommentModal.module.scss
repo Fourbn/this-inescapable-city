@@ -8,6 +8,13 @@
   border-radius: 2px;
   z-index: 9999;
 
+  @include break('mobile') {
+    padding: 2rem;
+    max-width: initial;
+    left: 40px;
+    right: 40px;
+  }
+
   .exit-button {
     position: absolute;
     background-color: transparent;
@@ -29,13 +36,20 @@
 
 .prompt {
   color: $grey-bg;
-  font-size: 2.8rem;
-  text-align: center;
+  font-size: 3.6rem;
+
+  @include break('mobile') {
+    padding-right: 2.5rem;
+    font-size: 3.2rem;
+  }
 }
 
 .instructions {
   color: $grey-bg;
   margin: 1rem 0 2rem;
+  @include break('mobile') {
+    padding-right: 2.5rem;
+  }
 }
 
 .form {
@@ -45,6 +59,7 @@
   label p {
     color: $grey-bg;
     margin-bottom: 5px;
+    font-size: 2.4rem;
   }
 
   input, 

@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <header className={header}>
-        {/* <Link to="/" aria-label="Return to the home page">
+        <Link to="/" aria-label="Return to the home page">
           <IoHomeOutline className={icon} />
-        </Link> */}
+        </Link>
       </header>
       {fadeModal && (
         <CommentModal fadeProps={modalFadeProps} setFade={setFadeModal} />

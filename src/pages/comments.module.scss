@@ -2,13 +2,68 @@
   align-items: start;
   align-content: start;
   h1 {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    @include break('mobile') {
+      font-size: 4rem;
+    }
+  }
+  min-height: auto !important;
+}
+
+.comment-list-section {
+  background-color: $river-blue;
+  padding: 8rem 0;
+  min-height: 50vh;
+  
+  .comment-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 5rem 2rem;
+    justify-content: center;
   }
 }
 
-.comment-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 4rem;
-  justify-content: center;
+.submit-comment-form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 125px;
+    resize: vertical;
+    font-size: 1.8rem;
+    padding: 1rem;
+    font-family: $main-font;
+    color: $deep-waters;
+    border: 2px solid transparent;
+    background-color: tint($river-blue, 80%);
+    border-radius: 2px;
+    transition: border 0.3s;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $algae;
+    }
+  }
+
+  button {
+    align-self: center;
+    margin-top: 3rem;
+  }
+}
+
+.thank-you-msg {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+
+  button {
+    margin-top: 3rem;
+  }
 }

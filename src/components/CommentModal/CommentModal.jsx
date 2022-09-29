@@ -53,7 +53,7 @@ const CommentModal = ({ setFade, fadeProps }) => {
       ) : (
         <p className={instructions}>
           You can contribute to the installation by filling out a response to
-          the prompt "The water remembers..." below.
+          the prompt below.
         </p>
       )}
       {!commentSubmitted && (

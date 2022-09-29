@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import Footer from "../components/Footer/Footer";
 
 import DesktopHero from "../components/DesktopHero/DesktopHero";
 import MobileHero from "../components/MobileHero/MobileHero";
@@ -9,10 +9,6 @@ import {
   hero,
   bgWrapper,
   extraNav,
-  homeFooter,
-  ccaLogo,
-  credits,
-  footerWrapper
 } from "./index.module.scss";
 
 const IndexPage = ({ data }) => {
@@ -37,37 +33,7 @@ const IndexPage = ({ data }) => {
           </ul>
         </nav>
       </main>
-      <footer className={homeFooter}>
-        <div className={footerWrapper}>
-          <StaticImage
-            src="../assets/CCA_RGB_white_e.png"
-            alt="Logo for the Canada Council for the Arts, grant provider for this project"
-            className={ccaLogo}
-          />
-          <div className={credits}>
-            <p>
-              homepage artwork by{" "}
-              <a
-                href="https://www.sidsharp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sid Sharp
-              </a>
-            </p>
-            <p>
-              website built by{" "}
-              <a
-                href="https://www.codeturkie.io"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Philip Turkiewicz
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
