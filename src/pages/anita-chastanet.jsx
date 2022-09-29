@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { lyrics, coverArtStyles, bioStyles } from "./anita-chastanet.module.scss";
 
@@ -19,13 +20,13 @@ const bio = `<p>a<span class="visual-break" />ngsty</p>
 
 const AnitaChastanet = ({ data }) => {
   const { contentfulArtistPage } = data;
-  const { images } = contentfulArtistPage;
+  const { artistName, nameImage, images } = contentfulArtistPage;
   const [coverArt] = images;
 
   return (
     <Layout>
       <section>
-        <h1>Anita Chastanet</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <VideoPlayer url="https://vimeo.com/753126567/51cae5915d" />
         <GatsbyImage
           image={coverArt.gatsbyImageData}
@@ -94,6 +95,10 @@ export const query = graphql`
   query {
     contentfulArtistPage(slug: { eq: "anita-chastanet" }) {
       artistName
+      nameImage {
+        description
+        gatsbyImageData
+      }
       images {
         description
         gatsbyImageData

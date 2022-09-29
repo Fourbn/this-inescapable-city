@@ -4,6 +4,7 @@ import CrossfadeImage from "react-crossfade-image";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import useInterval from "../hooks/useInterval";
 
@@ -18,7 +19,7 @@ const bio = `<p>Rihkee Strapp entered the world from a sea of blood, fully grown
 
 const RihkeeStrapp = ({ data }) => {
   const { contentfulArtistPage } = data;
-  const { images } = contentfulArtistPage;
+  const { images, artistName, nameImage } = contentfulArtistPage;
 
   const randomArrayIndex = (arrayLength) => {
     return Math.floor(Math.random() * arrayLength);
@@ -44,7 +45,7 @@ const RihkeeStrapp = ({ data }) => {
   return (
     <Layout>
       <section>
-        <h1>Rihkee Strapp</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={preload}>
           {images.map((image) => (
             <img src={image.url} alt="" loading="eager" className="visually-hidden" />
@@ -77,6 +78,10 @@ export const pageQuery = graphql`
       artistName
       images {
         url
+        description
+      }
+      nameImage {
+        gatsbyImageData
         description
       }
     }

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import OliviaModal from "../components/OliviaModal/OliviaModal";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { hero, allModals } from "./olivia-shortt.module.scss";
 
@@ -24,13 +26,15 @@ const popUpMessages = [
   "we can't drink the water",
 ];
 
-const OliviaShortt = () => {
+const OliviaShortt = ({ data }) => {
+  const { artistName, nameImage } = data.contentfulArtistPage;
+
   const [showModals, setShowModals] = useState(false);
 
   return (
     <Layout>
       <section className={hero}>
-        <h1>Olivia Shortt</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         {showModals && (
           <div className={allModals}>
             {popUpMessages.map((message) => (
@@ -49,3 +53,17 @@ const OliviaShortt = () => {
 };
 
 export default OliviaShortt;
+
+export const query = graphql`
+  query {
+    contentfulArtistPage(slug: { eq: "olivia-shortt" }) {
+      artistName
+      nameImage {
+        description
+        gatsbyImageData
+      }
+    }
+  }
+`;
+
+export { Head } from "../components/Head/Head";

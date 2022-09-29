@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 const bio = `<p>francesca ekwuyasi is a learner, storyteller, and multidisciplinary artist from Lagos, Nigeria. Her work has explored themes of faith, family, queerness, consumption, loneliness, and belonging.</p>
 
@@ -11,11 +12,13 @@ const bio = `<p>francesca ekwuyasi is a learner, storyteller, and multidisciplin
 
 <p>francesca has created and screened several experimental short films, with screenings at Black Film Festival in Montreal, Halifax, and Toronto; Durham Region International Film Festival (DRIFF), Nocturne Halifax, and the Khyber Centre for the Arts.</p>`;
 
-const FrancescaEkwuyasi = () => {
+const FrancescaEkwuyasi = ({ data }) => {
+  const { artistName, nameImage } = data.contentfulArtistName;
+
   return (
     <Layout>
       <section>
-        <h1>francesca ekwuyasi</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <VideoPlayer url="https://vimeo.com/753123998/e84dc9e8cc" />
       </section>
       <ArtistBio bio={bio} />
@@ -29,6 +32,10 @@ export const query = graphql`
   query {
     contentfulArtistPage(slug: { eq: "francesca-ekwuyasi" }) {
       artistName
+      nameImage {
+        gatsbyImageData
+        description
+      }
     }
   }
 `;

@@ -5,6 +5,7 @@ import useFade from "../hooks/useFade";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import {
   videoWrapper,
@@ -19,7 +20,9 @@ const bio = `<p>Based in Kjipuktuk (Halifax), on the powerful, unceded and unsur
 
 <p>My body is story. ---</p>`;
 
-const LilionaQuarmyne = () => {
+const LilionaQuarmyne = ({ data }) => {
+  const { artistName, nameImage } = data.contentfulArtistPage;
+
   const [introIsVisible, setIntroIsVisible, introFadeProps] = useFade(true);
   const [showDivider, setShowDivider] = useState(true);
 
@@ -31,7 +34,7 @@ const LilionaQuarmyne = () => {
   return (
     <Layout>
       <section>
-        <h1>Liliona Quarmyne</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={videoWrapper}>
           {introIsVisible && (
             <div
@@ -62,6 +65,10 @@ export const query = graphql`
   query {
     contentfulArtistPage(slug: { eq: "liliona-quarmyne" }) {
       artistName
+      nameImage {
+        gatsbyImageData
+        description
+      }
     }
   }
 `;

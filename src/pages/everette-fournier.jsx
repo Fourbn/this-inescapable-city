@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { imageStyles, artistStatement, poem, statement } from "./everette-fournier.module.scss";
 
@@ -12,12 +13,12 @@ const bio = `<p>Everette Fournier (they/them, he/him) is an emerging artist prac
 
 const EveretteFournier = ({ data }) => {
   const { contentfulArtistPage } = data;
-  const { images } = contentfulArtistPage;
+  const { images, artistName, nameImage } = contentfulArtistPage;
 
   return (
     <Layout>
       <section>
-        <h1>Everette Fournier</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         {images.map((image) => (
           <GatsbyImage
             key={image.id}
@@ -118,6 +119,10 @@ export const query = graphql`
         id
         description
         gatsbyImageData
+      }
+      nameImage {
+        gatsbyImageData
+        description
       }
     }
   }

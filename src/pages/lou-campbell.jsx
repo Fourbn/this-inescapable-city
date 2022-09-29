@@ -3,16 +3,19 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { definition, poem } from "./lou-campbell.module.scss";
 
 const bio = `<p>Lou Campbell (they/them) is a performance artist based in Halifax, NS. Their practice traverses a wide range of disciplines including poetry, sound art, improv, comedy, and the odd clown collage when a worldwide pandemic shuts their entire industry down. They create work that unpacks the inner workings of their own experiences, usually manifesting in the open sharing of mortifying past mistakes. They also co-run a cross-province collective based in Toronto and Halifax called Probably Theatre. This collective creates performance work devised from poetry, and runs an event series called “Probably Poetry” that facilitates the creation of new work from themselves and other artists. Lou's most recent performance piece was called PRUDE. Using comedy, the piece delved into the complex experience of being asexual in an (allo)sexual world.</p>`;
 
-const LouCampbell = () => {
+const LouCampbell = ({ data }) => {
+  const { artistName, nameImage } = data.contentfulArtistPage;
+
   return (
     <Layout>
       <section>
-        <h1>Lou Campbell</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={definition}>
           <h2>shore.line</h2>
           <p>/ˈSHôrlīn/</p>
@@ -121,6 +124,10 @@ export const query = graphql`
   query {
     contentfulArtistPage(slug: { eq: "lou-campbell" }) {
       artistName
+      nameImage {
+        gatsbyImageData
+        description
+      }
     }
   }
 `;

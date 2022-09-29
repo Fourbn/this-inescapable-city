@@ -1,15 +1,19 @@
 import React from "react";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 const bio = `<p>Laura Gallagher-Doucette is a cofounder of Probably Theatre Collective and co-curator of Probably Poetry performance series. They hold a Master of Divinity from Emmanuel College, a certificate in Creative Writing from Humber College, and a combined-honours in Theatre Studies and Early Modern Studies from the University of King's College. They are pursuing ordination in the United Church of Canada and work as a student minister in Toronto.</p>`;
 
-const LauraGallagherDoucette = () => {
+const LauraGallagherDoucette = ({ data }) => {
+  const { artistName, nameImage } = data.contentfulArtistPage;
+
   return (
     <Layout>
       <section>
-        <h1>Laura Gallagher-Doucette</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <div>
           <div>
             <h2>Poem 1</h2>
@@ -63,3 +67,17 @@ const LauraGallagherDoucette = () => {
 };
 
 export default LauraGallagherDoucette;
+
+export const query = graphql`
+  query {
+    contentfulArtistPage(slug: { eq: "laura-gallagher-doucette" }) {
+      artistName
+      nameImage {
+        gatsbyImageData
+        description
+      }
+    }
+  }
+`;
+
+export { Head } from "../components/Head/Head";

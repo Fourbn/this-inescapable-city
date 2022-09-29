@@ -5,6 +5,7 @@ import loadable from "@loadable/component";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 import audio from "../assets/audio/will-fan-audio.m4a";
 
 import {
@@ -29,12 +30,12 @@ const bio = `
 
 const WilliamHuntFanWu = ({ data }) => {
   const { contentfulArtistPage } = data;
-  const { images } = contentfulArtistPage;
+  const { images, artistName, nameImage } = contentfulArtistPage;
 
   return (
     <Layout>
       <section>
-        <h1>William Hunt & Fan Wu</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={imagesWrapper}>
           {images.map((image) => (
             <GatsbyImage
@@ -177,6 +178,10 @@ export const query = graphql`
         id
         gatsbyImageData
         description
+      }
+      nameImage {
+        description
+        gatsbyImageData
       }
     }
   }

@@ -6,6 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { allScans } from "./stewart-legere.module.scss";
 
@@ -16,12 +17,12 @@ const videoDescr =
 
 const StewartLegere = ({ data }) => {
   const { contentfulArtistPage } = data;
-  const { images } = contentfulArtistPage;
+  const { images, artistName, nameImage } = contentfulArtistPage;
 
   return (
     <Layout>
       <section>
-        <h1>Stewart Legere</h1>
+        <ArtistPageH1 image={nameImage} name={artistName} />
         <VideoPlayer
           url="https://vimeo.com/753126298/c8b22eee9b"
           playing
@@ -66,6 +67,10 @@ export const query = graphql`
       artistName
       images {
         id
+        description
+        gatsbyImageData
+      }
+      nameImage {
         description
         gatsbyImageData
       }
