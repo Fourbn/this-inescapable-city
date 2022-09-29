@@ -13,7 +13,7 @@ const bio = `<p>francesca ekwuyasi is a learner, storyteller, and multidisciplin
 <p>francesca has created and screened several experimental short films, with screenings at Black Film Festival in Montreal, Halifax, and Toronto; Durham Region International Film Festival (DRIFF), Nocturne Halifax, and the Khyber Centre for the Arts.</p>`;
 
 const FrancescaEkwuyasi = ({ data }) => {
-  const { artistName, nameImage } = data.contentfulArtistName;
+  const { artistName, nameImage } = data.contentfulArtistPage;
 
   return (
     <Layout>
