@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReactPlayer from "react-player/lazy";
 
-import { videoWrapper, caption, dividerStyles, noDivider } from "./VideoPlayer.module.scss";
+import { videoWrapper, caption, dividerStyles, noDivider, videoPlayer } from "./VideoPlayer.module.scss";
 
 const VideoPlayer = ({
   children,
@@ -11,9 +11,10 @@ const VideoPlayer = ({
   controls = true,
   onEnded,
   divider = true,
-  label,
-  description,
-  captions,
+  dividerClass,
+  // label,
+  // description,
+  // captions,
 }) => {
   const [hideDivider, setHideDivider] = useState(false);
 
@@ -24,7 +25,7 @@ const VideoPlayer = ({
   return (
     <div className={videoWrapper}>
       <div
-        className={`${dividerStyles} ${hideDivider ? "fading-out" : ""} ${
+        className={`${dividerStyles} ${dividerClass} ${hideDivider ? "fading-out" : ""} ${
           divider ? "" : noDivider
         }`}
       />
@@ -34,8 +35,8 @@ const VideoPlayer = ({
         onEnded={onEnded}
         controls={controls}
         width="100%"
-        height="560px"
         onProgress={() => handleProgress()}
+        className={videoPlayer}
       />
       {children && <div className={caption}>{children}</div>}
     </div>

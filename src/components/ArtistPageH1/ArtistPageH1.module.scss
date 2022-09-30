@@ -3,5 +3,9 @@
 
   .heading-img {
     width: 300px;
+
+    @include break('mobile') {
+      width: 270px;
+    }
   }
 }

@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import loadable from "@loadable/component";
 
-import {
-  card,
-  active,
-  disabledStyles,
-  audioControls,
-} from "./DylanAudioGroup.module.scss";
+import { audioControls } from "./DylanAudioGroup.module.scss";
 
 const AudioPlayer = loadable(() => import("../AudioPlayer/AudioPlayer"));
 
