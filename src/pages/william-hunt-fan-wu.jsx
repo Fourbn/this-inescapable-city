@@ -45,7 +45,7 @@ const WilliamHuntFanWu = ({ data }) => {
             />
           ))}
         </div>
-        <AudioPlayer audioSrc={audio} autoPlay />
+        <AudioPlayer audioSrc={audio} autoPlay progressBar />
         <div className={poemWrapper}>
           <div className={poem}>
             <h2>I.</h2>
