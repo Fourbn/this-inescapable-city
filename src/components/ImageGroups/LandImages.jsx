@@ -78,6 +78,7 @@ const allImportsWithCoords = [
 const LandImages = ({
   className,
   handleZIndexIncrease,
+  fadeProps,
   activeImage,
   setActiveImage,
 }) => {
@@ -174,7 +175,9 @@ const LandImages = ({
                 zIndex: imageZStates.get(`dragPathLand${threeDigitKey}`),
               }}
             >
-              <Image />
+              <div {...fadeProps}>
+                <Image />
+              </div>
               {renderButton && (
                 <button
                   onAnimationEnd={() => {

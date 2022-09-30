@@ -164,7 +164,7 @@ const CityImages = ({
               <div {...fadeProps}>
                 <Image />
               </div>
-              {renderButton &
+              {renderButton &&
               (
                 <button
                   onAnimationEnd={() => {
