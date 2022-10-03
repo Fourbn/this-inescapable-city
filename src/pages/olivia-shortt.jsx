@@ -8,6 +8,7 @@ import OliviaModal from "../components/OliviaModal/OliviaModal";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import { hero, allModals } from "./olivia-shortt.module.scss";
+import DelayedRender from "../components/DelayedRender/DelayedRender";
 
 const bio = `<p>(Anishinaabe, Nipissing First Nation) Olivia Shortt is a Tkarón:to-based performing artist, sound artist, composer, noise-maker, trouble-maker and professional disrupter.</p>
 
@@ -16,14 +17,14 @@ const bio = `<p>(Anishinaabe, Nipissing First Nation) Olivia Shortt is a Tkarón
 <p>Shortt was a finalist for the 2021 Toronto Arts Foundation Emerging Artist Award, was one of the 2020 Buddies in Bad Times’ Emerging Queer Artists & is featured in the 2020 Winter edition of Musicworks Magazine. They love cats, glitter and collaborating with others. <a href="https://www.olivia-shortt.com" target="_blank" rel="noopener noreferrer">www.olivia-shortt.com</a></p>`;
 
 const popUpMessages = [
-  "error",
-  "treaties broken n n n n n n n n n",
-  "water is life",
-  "long-term drinking water advisories on reserves",
-  "w a t e r r r r r r r r r r",
-  "don't drink the water",
-  "the prime minister lied to us",
-  "we can't drink the water",
+  ["error", 500],
+  ["treaties broken n n n n n n n n n", 3000],
+  ["water is life", 3400],
+  ["long-term drinking water advisories on reserves", 5000],
+  ["w a t e r r r r r r r r r r", 5100],
+  ["don't drink the water", 5200],
+  ["the prime minister lied to us", 5300],
+  ["we can't drink the water", 5400],
 ];
 
 const OliviaShortt = ({ data }) => {
@@ -37,9 +38,14 @@ const OliviaShortt = ({ data }) => {
         <ArtistPageH1 image={nameImage} name={artistName} />
         {showModals && (
           <div className={allModals}>
-            {popUpMessages.map((message) => (
-              <OliviaModal message={message} />
-            ))}
+            {popUpMessages.map((message) => {
+              const [string, delay] = message;
+              return (
+                <DelayedRender key={delay} delay={delay}>
+                  <OliviaModal message={string} />
+                </DelayedRender>
+              );
+            })}
           </div>
         )}
         <VideoPlayer
