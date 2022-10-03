@@ -11,7 +11,7 @@ import useInterval from "../hooks/useInterval";
 import gif1 from "../assets/rihkee/animation1.gif";
 import gif2 from "../assets/rihkee/animation2.gif";
 import gif3 from "../assets/rihkee/animation3.gif";
-// import gif4 from "../assets/rihkee/animation4.gif";
+import gif4 from "../assets/rihkee/animation4.gif";
 
 import { image, gif, wrapper, preload } from "./rihkee-strapp.module.scss";
 
@@ -26,13 +26,23 @@ const RihkeeStrapp = ({ data }) => {
   };
 
   const gifArray = [
-    { src: gif1, alt: "this is the gif alt text", timing: 7360 },
-    { src: gif2, alt: "this is the gif alt text", timing: 5880 },
-    { src: gif3, alt: "this is the gif alt text", timing: 8840 },
+    { src: gif1, alt: "this is the gif alt text" },
+    { src: gif2, alt: "this is the gif alt text" },
+    { src: gif3, alt: "this is the gif alt text" },
+  ];
+
+  const gif4Placements = [
+    { top: 0, left: 0 },
+    { top: "60%", left: "35%" },
+    { top: "50%", left: "-10%" },
+    { top: 0, left: "-36%" },
+    { top: 0, left: "-10%" },
+    { top: "60%", left: 0 },
   ];
 
   const [imageIndex, setImageIndex] = useState(0);
   const [gifIndex, setGifIndex] = useState(0);
+  const [gif4Position, setGif4Position] = useState(0);
 
   useInterval(() => {
     setImageIndex(randomArrayIndex(images.length));
@@ -40,7 +50,11 @@ const RihkeeStrapp = ({ data }) => {
 
   useInterval(() => {
     setGifIndex(randomArrayIndex(gifArray.length));
-  }, gifArray[gifIndex]["timing"]);
+  }, 9520);
+
+  useInterval(() => {
+    setGif4Position(randomArrayIndex(gif4Placements.length));
+  }, 9520);
 
   return (
     <Layout>
@@ -48,7 +62,12 @@ const RihkeeStrapp = ({ data }) => {
         <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={preload}>
           {images.map((image) => (
-            <img src={image.url} alt="" loading="eager" className="visually-hidden" />
+            <img
+              src={image.url}
+              alt=""
+              loading="eager"
+              className="visually-hidden"
+            />
           ))}
         </div>
         <div className={wrapper}>
@@ -62,6 +81,11 @@ const RihkeeStrapp = ({ data }) => {
             src={gifArray[gifIndex]["src"]}
             alt={gifArray[gifIndex["alt"]]}
             className={gif}
+          />
+          <img
+            src={gif4}
+            className={gif}
+            style={gif4Placements[gif4Position]}
           />
         </div>
       </section>
