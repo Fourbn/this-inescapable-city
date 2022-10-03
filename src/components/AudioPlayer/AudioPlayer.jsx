@@ -125,7 +125,9 @@ const AudioPlayer = ({
   return (
     <div className={`${controlPanel} ${className}`}>
       <div
-        className={volumeStyles}
+        className={`${volumeStyles} ${
+          disabledPlayers.includes(id) ? disabled : ""
+        }`}
         onMouseEnter={() => handleShowVolSlider(true)}
         onMouseLeave={() => handleShowVolSlider(false)}
       >

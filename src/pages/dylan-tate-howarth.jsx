@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
@@ -24,6 +24,25 @@ const DylanTateHowarth = ({ data }) => {
 
   const [activePlayer, setActivePlayer] = useState("");
   const [disabledPlayers, setDisabledPlayers] = useState([]);
+  const [availablePlayers, setAvailablePlayers] = useState([content[0]]);
+  const [completedJourney, setCompletedJourney] = useState(false);
+
+  useEffect(() => {
+    if (!completedJourney && disabledPlayers.length === 1) {
+      const excludeTenthAudio = content.filter(
+        (audioGroup, index) => index !== content.length - 1
+      );
+      setAvailablePlayers(excludeTenthAudio);
+    }
+    if (!completedJourney && disabledPlayers.length === 9) {
+      setAvailablePlayers(content);
+    }
+    if (disabledPlayers.length === 10) {
+      setDisabledPlayers([]);
+      setAvailablePlayers([content[0]]);
+      setCompletedJourney(true);
+    }
+  }, [content, disabledPlayers.length]);
 
   return (
     <Layout>
@@ -53,6 +72,7 @@ const DylanTateHowarth = ({ data }) => {
                 setActivePlayer={setActivePlayer}
                 disabledPlayers={disabledPlayers}
                 setDisabledPlayers={setDisabledPlayers}
+                availablePlayers={availablePlayers}
               />
             </li>
           ))}
