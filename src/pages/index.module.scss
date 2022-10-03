@@ -37,13 +37,23 @@
     order: 1;
     padding: 3rem 0 3rem 5rem;
 
+    li a {
+      color: $algae;
+      text-decoration: underline solid transparent;
+      transition: text-decoration 0.3s;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline solid $algae;
+      }
+    }
+
     @include break('tablet') {
       padding: 2rem 4.5rem 0;
       background-color: shade($river-blue, 30%);
       text-align: right;
 
-      a,
-      li {
+      a {
         color: $thistle;
       }
     }

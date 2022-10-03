@@ -24,7 +24,9 @@ const IndexPage = ({ data }) => {
         </div>
         <nav className={extraNav} aria-label="Secondary">
           <ul>
-            <li>about the project</li>
+            <li>
+              <Link to="/about">about the project</Link>
+            </li>
             <li>
               <Link to="/comments">comments</Link>
             </li>

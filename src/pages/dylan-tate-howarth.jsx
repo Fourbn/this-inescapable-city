@@ -42,7 +42,7 @@ const DylanTateHowarth = ({ data }) => {
       setAvailablePlayers([content[0]]);
       setCompletedJourney(true);
     }
-  }, [content, disabledPlayers.length]);
+  }, [content, disabledPlayers.length, completedJourney]);
 
   return (
     <Layout>
