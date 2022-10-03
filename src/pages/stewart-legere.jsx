@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Zoom from "react-medium-image-zoom";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -8,7 +8,14 @@ import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
-import { allScans } from "./stewart-legere.module.scss";
+import {
+  scansSection,
+  allScans,
+  enlargedImg,
+  fullsizeImage,
+  active,
+  mobileScansList
+} from "./stewart-legere.module.scss";
 
 const bio = `<p>Stewart is a multidisciplinary artist originally from Punamu'kwati'jk/Dartmouth. He is the Associate Artistic Director of ZUPPA, co-Artistic Director of THE ACCIDENTAL MECHANICS GROUP, and is currently an artist-in-residence at THE THEATRE CENTRE in Toronto. He has released two albums: "Quiet the Station" (2017), and "To the Bone: Songs from Splinters" (2020). With ZUPPA he has co-created and toured over a dozen original shows, including "Poor Boy", "Pop-Up Love Party" and "The Archive of Missing Things". Recent solo work includes "El Camino or The Field of Stars" and "Let's Not Beat Each Other To Death". His work has appeared in festivals and theatres across the country and internationally. He is fascinated with vulnerability, intimacy, the destruction of persona and the celebration of performance.</p>`;
 
@@ -18,6 +25,8 @@ const videoDescr =
 const StewartLegere = ({ data }) => {
   const { contentfulArtistPage } = data;
   const { images, artistName, nameImage } = contentfulArtistPage;
+
+  const [activeImage, setActiveImage] = useState(images[1]);
 
   return (
     <Layout>
@@ -43,9 +52,33 @@ const StewartLegere = ({ data }) => {
             </span>
           </p>
         </VideoPlayer>
+      </section>
+      <section className={scansSection}>
+        <GatsbyImage
+          image={activeImage.gatsbyImageData}
+          alt={activeImage.description}
+          className={enlargedImg}
+        />
         <div className={allScans}>
+          {images.map((image, index) => (
+            <button
+              key={image.id}
+              onClick={() => setActiveImage(images[index])}
+            >
+              <GatsbyImage
+                image={image.gatsbyImageData}
+                alt={image.description}
+                className={`${fullsizeImage} ${
+                  image.id === activeImage.id ? active : ""
+                }`}
+              />
+              <h3>{image.title}</h3>
+            </button>
+          ))}
+        </div>
+        <div className={mobileScansList}>
           {images.map((image) => (
-            <Zoom key={image.id}>
+            <Zoom key={image.key}>
               <GatsbyImage
                 image={image.gatsbyImageData}
                 alt={image.description}
@@ -67,6 +100,7 @@ export const query = graphql`
       artistName
       images {
         id
+        title
         description
         gatsbyImageData
       }
