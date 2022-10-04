@@ -202,4 +202,13 @@ button,
   font-style: italic;
 }
 
+.quote {
+  &::before {
+    content: '“'
+  }
+  &::after {
+    content: '”'
+  }
+}
+
 // * { border: 1px solid red; }
