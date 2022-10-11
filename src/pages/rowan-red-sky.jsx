@@ -15,6 +15,7 @@ import {
   container,
   object,
   controlPanel,
+  mobileFallback,
 } from "./rowan-red-sky.module.scss";
 
 const bio = `<p>Rowan Red Sky (Oneida Nation of the Thames) graduated from the Publications program at OCAD University in 2015. She works as an artist making illustrations that draw from the oral tradition of her Indigenous culture and personal experiences. Maps, the animacy of the land, and the performance of stories inspire her work. In 2020 she started graduate school in the Art History program at the University of Toronto. Her academic research investigates nineteenth-century stereotypical images of Native Americans and American landscapes, and how Indigenous performers and visual artists have responded to these images. Her writing and illustration work has been published by CBC, Shameless Magazine, Canthius, Maisonneuve, and Broadview. Currently, she is planning an exhibition featuring nineteenth-century illustrations of Native Americans, which will be on display at Massey College until December 2022.</p>`;
@@ -175,6 +176,10 @@ const RowanRedSky = ({ data }) => {
             wanekláksʌ
           </button>
         </div>
+      </section>
+      <section className={mobileFallback}>
+        <p>Welcome to my piece! If you're reading this it's because you're currently using a tablet, mobile device, or your browser window is a bit too narrow. My piece is built for you to play around with it and you'll need a lot of room in your browser to do that. I recommend you come back to my page using a desktop or laptop and you'll see what I mean! In the meantime, catch a glimpse of the fun you could be having below. Enjoy!</p>
+        <div />
       </section>
       <ArtistBio bio={bio} />
     </Layout>
