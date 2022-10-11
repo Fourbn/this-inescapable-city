@@ -37,6 +37,7 @@ const VideoPlayer = ({
         width="100%"
         onProgress={() => handleProgress()}
         className={videoPlayer}
+        playsInline={true}
       />
       {children && <div className={caption}>{children}</div>}
     </div>
