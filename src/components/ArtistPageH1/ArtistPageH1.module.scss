@@ -9,3 +9,36 @@
     }
   }
 }
+
+.rihkee-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include break('mobile') {
+    display: block;
+  }
+  .added-text {
+    text-transform: none;
+  
+    & > span:first-child {
+      font-family: sans-serif;
+      transform: rotate(45deg);
+      display: inline-block;
+      margin-right: 3.5rem;
+    }
+
+    @include break('mobile') {
+      display: block;
+      margin-top: -4rem;
+
+      & > span:first-child {
+        margin-right: 0;
+      }
+
+      & > span:last-child {
+        display: block;
+      }
+    }
+  }
+}

@@ -61,7 +61,7 @@
   }
 
   @include break('mobile') {
-    display: none;
+    display: none !important;
   }
 }
 

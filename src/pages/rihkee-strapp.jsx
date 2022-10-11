@@ -59,7 +59,7 @@ const RihkeeStrapp = ({ data }) => {
   return (
     <Layout>
       <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+        <ArtistPageH1 image={nameImage} name={artistName} rihkee />
         <div className={preload}>
           {images.map((image) => (
             <img
