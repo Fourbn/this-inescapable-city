@@ -27,7 +27,7 @@ const AnitaChastanet = ({ data }) => {
     <Layout>
       <section>
         <ArtistPageH1 image={nameImage} name={artistName} />
-        <VideoPlayer url="https://vimeo.com/753126567/51cae5915d" />
+        <VideoPlayer url="https://vimeo.com/758132925/4ee14fee6a" />
         <GatsbyImage
           image={coverArt.gatsbyImageData}
           alt={coverArt.description}

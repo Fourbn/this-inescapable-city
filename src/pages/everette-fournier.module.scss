@@ -37,6 +37,9 @@
   @include break('tablet') {
     grid-column: 2 / -2;
   }
+  @include break('mobile') {
+    margin-top: 6rem;
+  }
 
   h2 {
     font-size: 3rem;
