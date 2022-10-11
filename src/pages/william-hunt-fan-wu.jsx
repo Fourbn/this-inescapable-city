@@ -16,6 +16,7 @@ import {
   jump2,
   jump3,
   jump4,
+  audioBar,
 } from "./william-hunt-fan-wu.module.scss";
 
 const AudioPlayer = loadable(() =>
@@ -45,7 +46,7 @@ const WilliamHuntFanWu = ({ data }) => {
             />
           ))}
         </div>
-        <AudioPlayer audioSrc={audio} autoPlay progressBar />
+        <AudioPlayer audioSrc={audio} autoPlay className={audioBar} />
         <div className={poemWrapper}>
           <div className={poem}>
             <h2>I.</h2>

@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { HiVolumeUp, HiOutlinePause, HiOutlinePlay } from "react-icons/hi";
-import useFade from "../../hooks/useFade";
+import { HiOutlinePause, HiOutlinePlay } from "react-icons/hi";
 
 import {
   controlPanel,
   icon,
   audioButton,
-  volumeStyles,
   progress,
   disabled,
 } from "./AudioPlayer.module.scss";
@@ -21,19 +19,13 @@ const AudioPlayer = ({
   id,
   activePlayer,
   setActivePlayer,
-  progressBar,
   disabledPlayers = [],
   setDisabledPlayers,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [trackVolume, setTrackVolume] = useState(0.5);
 
   const audioRef = useRef(new Audio(audioSrc));
   const intervalRef = useRef();
-
-  const [volumeIsVisible, setVolumeIsVisible, volumeFadeProps] = useFade();
-
-  const { volume } = audioRef.current;
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -43,19 +35,6 @@ const AudioPlayer = ({
     if (setActivePlayer && isPlaying) {
       setActivePlayer("");
     }
-  };
-
-  const handleVolumeChange = (value) => {
-    audioRef.current.volume = value;
-    setTrackVolume(audioRef.current.volume);
-  };
-
-  const handleShowVolSlider = (boolean) => {
-    if (disabledPlayers.includes(id)) {
-      setVolumeIsVisible(false);
-      return;
-    }
-    setVolumeIsVisible(boolean);
   };
 
   const updateDisabledPlayersState = () => {
@@ -73,7 +52,6 @@ const AudioPlayer = ({
       if (audioRef.current.ended) {
         clearInterval(intervalRef.current);
         updateDisabledPlayersState();
-        setVolumeIsVisible(false);
       }
       setTrackProgress(audioRef.current.currentTime);
     }, [1000]);
@@ -82,16 +60,12 @@ const AudioPlayer = ({
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
-      if (progressBar) {
-        startTimer();
-      }
+      startTimer();
     } else {
       audioRef.current.pause();
-      if (progressBar) {
-        clearInterval(intervalRef.current);
-      }
+      clearInterval(intervalRef.current);
     }
-  }, [isPlaying, progressBar]);
+  }, [isPlaying]);
 
   useEffect(() => {
     if (multiplePlayers && id !== activePlayer) {
@@ -103,59 +77,20 @@ const AudioPlayer = ({
     const currentAudio = audioRef.current;
     return () => {
       currentAudio.pause();
-      if (progressBar) {
-        clearInterval(intervalRef.current);
-      }
+      clearInterval(intervalRef.current);
     };
-  }, [progressBar]);
-
-  const currentVolumePercentage = volume ? `${(trackVolume / 1) * 100}%` : "0%";
-  const trackVolumeStyling = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentVolumePercentage}, #08a3c9), color-stop(${currentVolumePercentage}, #0f252e))
-  `;
+  }, []);
 
   const { duration } = audioRef.current;
   const currentDuration = duration
     ? `${(trackProgress / duration) * 100}%`
     : "0%";
   const trackProgressStyling = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentDuration}, #08a3c9), color-stop(${currentDuration}, #0f252e))
+    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentDuration}, #08a3c9), color-stop(${currentDuration}, #f0f0f0))
   `;
 
   return (
     <div className={`${controlPanel} ${className}`}>
-      <div
-        className={`${volumeStyles} ${
-          disabledPlayers.includes(id) ? disabled : ""
-        }`}
-        onMouseEnter={() => handleShowVolSlider(true)}
-        onMouseLeave={() => handleShowVolSlider(false)}
-      >
-        <button
-          className={`${audioButton} ${
-            disabledPlayers.includes(id) ? disabled : ""
-          }`}
-          type="button"
-          onClick={() => handleShowVolSlider(true)}
-          disabled={disabledPlayers.includes(id)}
-          aria-label="Use range input below to control volume"
-        >
-          <HiVolumeUp className={icon} />
-        </button>
-        {volumeIsVisible && (
-          <input
-            {...volumeFadeProps}
-            type="range"
-            value={trackVolume}
-            step="0.05"
-            min="0"
-            max="1"
-            onChange={(e) => handleVolumeChange(e.target.value)}
-            style={{ background: trackVolumeStyling }}
-            aria-label="slide to increase or decrease the volume"
-          />
-        )}
-      </div>
       {isPlaying ? (
         <button
           className={`${audioButton} ${
@@ -181,15 +116,13 @@ const AudioPlayer = ({
           <HiOutlinePlay className={icon} />
         </button>
       )}
-      {progressBar && (
-        <div
-          className={progress}
-          style={{ background: trackProgressStyling }}
-          aria-label={`tracking progress of ${audioTitle}: ${
-            (trackProgress / duration) * 100
-          }% complete`}
-        />
-      )}
+      <div
+        className={progress}
+        style={{ background: trackProgressStyling }}
+        aria-label={`tracking progress of ${audioTitle}: ${
+          (trackProgress / duration) * 100
+        }% complete`}
+      />
     </div>
   );
 };
