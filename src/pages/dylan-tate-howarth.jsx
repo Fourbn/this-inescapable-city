@@ -9,7 +9,8 @@ import RichText from "../components/RichText/RichText";
 import DylanAudioGroup from "../components/DylanAudioGroup/DylanAudioGroup";
 
 import {
-  audioSection,
+  hero,
+  instructions,
   cardGrid,
   card,
   transcriptSection,
@@ -46,18 +47,17 @@ const DylanTateHowarth = ({ data }) => {
 
   return (
     <Layout>
-      <section>
+      <section className={hero}>
         <ArtistPageH1 image={nameImage} name={artistName} />
-        <VideoPlayer url="https://vimeo.com/755582532/7accf22b5d" />
-      </section>
-      <section className={audioSection}>
-        <div>
+        <div className={instructions}>
           <h2>Ten Days of Returning</h2>
           <p>
-            Start with 1 and end with 10, but otherwise please listen to the
-            following in any order that you like. A transcript is below.
+            Instructions: While you watch, listen to the audio below, starting
+            with 1 and ending with 10, but otherwise listen in whatever order
+            you like. There is a transcript further down the page.
           </p>
         </div>
+        <VideoPlayer url="https://vimeo.com/755582532/7accf22b5d" />
         <ol className={cardGrid}>
           {content.map((audioGroup) => (
             <li
@@ -79,7 +79,7 @@ const DylanTateHowarth = ({ data }) => {
         </ol>
       </section>
       <section className={transcriptSection}>
-        <h2>Transcript</h2>
+        <h2>Ten Days of Returning</h2>
         <ol className={cardGrid}>
           {content.map((audioGroup) => (
             <li

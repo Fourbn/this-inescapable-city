@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import loadable from "@loadable/component";
+import useFade from "../../hooks/useFade";
 
 import {
   audioCardStyles,
   audioControls,
   placeholder,
+  controlsWrapper,
 } from "./DylanAudioGroup.module.scss";
-import useFade from "../../hooks/useFade";
 
 const AudioPlayer = loadable(() => import("../AudioPlayer/AudioPlayer"));
 
@@ -35,24 +36,26 @@ const DylanAudioGroup = ({
   return (
     <div className={audioCardStyles}>
       <h3>{audioGroup.title}</h3>
-      <AudioPlayer
-        id={audioGroup.id}
-        audioTitle={audioGroup.title}
-        audioSrc={audioGroup.audio.url}
-        className={audioControls}
-        multiplePlayers
-        progressBar
-        activePlayer={activePlayer}
-        setActivePlayer={setActivePlayer}
-        disabledPlayers={disabledPlayers}
-        setDisabledPlayers={setDisabledPlayers}
-      />
-      {fadePlaceholder && (
-        <div
-          className={`${placeholder} ${placeholderFadeProps.className}`}
-          onAnimationEnd={placeholderFadeProps.onAnimationEnd}
+      <div className={controlsWrapper}>
+        <AudioPlayer
+          id={audioGroup.id}
+          audioTitle={audioGroup.title}
+          audioSrc={audioGroup.audio.url}
+          className={audioControls}
+          multiplePlayers
+          progressBar
+          activePlayer={activePlayer}
+          setActivePlayer={setActivePlayer}
+          disabledPlayers={disabledPlayers}
+          setDisabledPlayers={setDisabledPlayers}
         />
-      )}
+        {fadePlaceholder && (
+          <div
+            className={`${placeholder} ${placeholderFadeProps.className}`}
+            onAnimationEnd={placeholderFadeProps.onAnimationEnd}
+          />
+        )}
+      </div>
     </div>
   );
 };

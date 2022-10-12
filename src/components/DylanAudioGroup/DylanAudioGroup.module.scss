@@ -1,10 +1,26 @@
 .audio-card-styles {
+  display: flex;
+  align-items: center;
+}
+
+.controls-wrapper {
+  width: 100%;
   position: relative;
-  padding: 2rem;
 }
 
 .audio-controls {
   margin: 0;
+  padding: 5px 1rem;
+
+  button {
+    svg {
+      font-size: 3rem !important;
+    }
+    & + div {
+      margin: 0 1rem;
+      height: 5px;
+    }
+  }
 }
 
 .placeholder {
@@ -13,5 +29,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: tint($river-blue, 55%);
+  background-color: tint($deep-waters, 0%);
+  border-radius: 4px;
 }
