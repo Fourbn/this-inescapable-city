@@ -29,7 +29,7 @@ const CommentsBackend = () => {
         for (let key in fbData) {
           newCommentsState.push({ key: key, comment: fbData[key] });
         }
-        setTbaComments(newCommentsState);
+        setTbaComments(newCommentsState.reverse());
       });
   }, []);
 

@@ -12,9 +12,9 @@ import {
   thankYouMsg,
   submitCommentForm,
   commentListSection,
-} from "./comments.module.scss";
+} from "./comments-poem.module.scss";
 
-const Comments = () => {
+const CommentsPoem = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -26,10 +26,12 @@ const Comments = () => {
         const fbData = response.val();
 
         for (let key in fbData) {
-          newComments.push({ key: key, comment: fbData[key] });
+          if (fbData[key].displayOnSite) {
+            newComments.push({ key: key, comment: fbData[key] });
+          }
         }
 
-        setComments(newComments);
+        setComments(newComments.reverse());
       });
   }, []);
 
@@ -58,7 +60,7 @@ const Comments = () => {
     <>
       <Layout>
         <section className={commentsHero}>
-          <h1>The water remembers ...</h1>
+          <h1>The water remembers...</h1>
           {commentSubmitted ? (
             <div className={thankYouMsg}>
               <p>
@@ -77,6 +79,10 @@ const Comments = () => {
               action="submit"
               onSubmit={(e) => handleSubmitComment(e)}
             >
+              <p>
+                You can contribute to the installation by filling out a response
+                to the prompt below.
+              </p>
               <label htmlFor="pageComment">
                 <p className="sr-only">
                   Answer this prompt: "The water remembers..."
@@ -89,7 +95,7 @@ const Comments = () => {
                   onChange={(e) => setUserComment(e.target.value)}
                 ></textarea>
               </label>
-              <button type="submit">Leave your mark</button>
+              <button type="submit">Submit</button>
             </form>
           )}
         </section>
@@ -113,7 +119,7 @@ const Comments = () => {
   );
 };
 
-export default Comments;
+export default CommentsPoem;
 
 export const query = graphql`
   query {

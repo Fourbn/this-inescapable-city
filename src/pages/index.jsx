@@ -5,11 +5,7 @@ import Footer from "../components/Footer/Footer";
 import DesktopHero from "../components/DesktopHero/DesktopHero";
 import MobileHero from "../components/MobileHero/MobileHero";
 
-import {
-  hero,
-  bgWrapper,
-  extraNav,
-} from "./index.module.scss";
+import { hero, bgWrapper, extraNav } from "./index.module.scss";
 
 const IndexPage = ({ data }) => {
   const { images } = data.contentfulSitePage;
@@ -28,10 +24,11 @@ const IndexPage = ({ data }) => {
               <Link to="/about">about the project</Link>
             </li>
             <li>
-              <Link to="/comments">comments</Link>
+              <Link to="/comments-poem">comments poem</Link>
             </li>
-            <li>land acknowledgement</li>
-            <li>donate</li>
+            <li>
+              <Link to="/land-acknowledgement">land acknowledgement</Link>
+            </li>
           </ul>
         </nav>
       </main>

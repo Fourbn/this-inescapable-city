@@ -5,9 +5,10 @@ import Layout from "../components/Layout/Layout";
 import Footer from "../components/Footer/Footer";
 import RichText from "../components/RichText/RichText";
 
+// copy and pasted this from the about page, still using about page styles for now. at some point this needs to be moved into a page template
 import { pageContent } from "./about.module.scss";
 
-const About = ({ data }) => {
+const LandAcknowledgement = ({ data }) => {
   const { pageTitle, textContent } = data.contentfulSitePage;
 
   return (
@@ -23,11 +24,11 @@ const About = ({ data }) => {
   );
 };
 
-export default About;
+export default LandAcknowledgement;
 
 export const query = graphql`
   query {
-    contentfulSitePage(slug: { eq: "about-this-project" }) {
+    contentfulSitePage(slug: { eq: "land-acknowledgement" }) {
       pageTitle
       textContent {
         raw

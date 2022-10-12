@@ -1,4 +1,6 @@
-.header,
+.header {
+  position: absolute;
+}
 .footer {
   position: fixed;
   z-index: 9999;
@@ -18,6 +20,10 @@
   color: $river-blue;
   transition: color 0.3s;
 
+  @include break('mobile') {
+    font-size: 3.8rem;
+  }
+
   &:hover {
     color: $rust;
   }
@@ -27,7 +33,7 @@
   cursor: pointer;
   background-color: transparent;
   border-color: transparent;
-  padding: 1.5rem;
+  padding: 0;
 
   &:hover,
   &:focus {
