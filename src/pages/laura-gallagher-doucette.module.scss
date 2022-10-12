@@ -5,7 +5,7 @@
 .city-poem,
 .lake-poem,
 .essay-section {
-  padding: 8rem 0;
+  padding: 4rem 0;
   @include break('mobile') {
     padding: 4rem 0;
   }
@@ -17,6 +17,7 @@
 
   p {
     text-align: justify;
+    // text-align-last: justify;
   }
 
   h2 {
@@ -84,7 +85,7 @@
   }
 
   .poem-wrapper {
-    background-color: rgba(239, 232, 245, 0.8);
+    background-color: rgba(239, 232, 245, 0.9);
     // background-color: rgba(169, 223, 236, 0.7);
     // background-color: rgba(153, 216, 212, 0.7);
   }
