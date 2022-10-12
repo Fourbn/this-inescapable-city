@@ -54,8 +54,13 @@
       background-color: shade($river-blue, 30%);
       text-align: right;
 
-      a {
+      li a {
         color: $thistle;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline solid $thistle;
+        }
       }
     }
 

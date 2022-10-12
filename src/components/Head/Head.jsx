@@ -38,6 +38,7 @@ export const Head = ({ location, data }) => {
     <>
       <title>{generateSiteTitle()}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content="noindex" />
 
       {/* Open Graph / Facebook social share tags */}
       <meta property="og:title" content={artistName || title} />

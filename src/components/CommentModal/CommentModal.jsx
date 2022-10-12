@@ -4,7 +4,7 @@ import firebase from "gatsby-plugin-firebase";
 import {
   modal,
   exitButton,
-  prompt,
+  modalTitle,
   instructions,
   form,
   submitButton,
@@ -39,10 +39,10 @@ const CommentModal = ({ setFade, fadeProps }) => {
       >
         +
       </button>
-      <h2 className={prompt}>
+      <h2 className={modalTitle}>
         {commentSubmitted
           ? "Thank you for submitting your comment!"
-          : "Add your artistry to the site!"}
+          : "Contribute to the installation"}
       </h2>
       {commentSubmitted ? (
         <p className={instructions}>

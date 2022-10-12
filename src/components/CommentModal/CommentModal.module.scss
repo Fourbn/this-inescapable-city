@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   max-width: 600px;
-  background-color: shade($river-blue, 10%);
+  background-color: shade($river-blue, 30%);
   padding: 5rem;
   left: calc(50% - 300px);
   top: 20%;
@@ -34,7 +34,7 @@
   }
 }
 
-.prompt {
+.modal-title {
   color: $grey-bg;
   font-size: 3.6rem;
 
@@ -59,7 +59,6 @@
   label p {
     color: $grey-bg;
     margin-bottom: 5px;
-    font-size: 2.4rem;
   }
 
   input, 

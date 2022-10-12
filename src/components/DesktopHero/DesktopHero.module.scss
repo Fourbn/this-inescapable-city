@@ -17,15 +17,17 @@
     opacity: 0;
   }
 
-  
+
   .name-overlay {
     opacity: 1;
     fill: transparent;
     transition: fill 0.3s;
   }
+
   a:hover .name-overlay {
     opacity: 1;
     fill: $algae;
+    stroke: $algae;
   }
 }
 
