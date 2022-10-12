@@ -15,7 +15,7 @@ const LandAcknowledgement = ({ data }) => {
     <>
       <Layout>
         <section className={pageContent}>
-          <h1>{pageTitle}</h1>
+          <h1 className="long-word">{pageTitle}</h1>
           <RichText richText={textContent} />
         </section>
       </Layout>
