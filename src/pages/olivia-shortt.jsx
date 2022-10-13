@@ -34,8 +34,8 @@ const OliviaShortt = ({ data }) => {
 
   return (
     <Layout>
+      <ArtistPageH1 image={nameImage} name={artistName} />
       <section className={hero}>
-        <ArtistPageH1 image={nameImage} name={artistName} />
         {showModals && (
           <div className={allModals}>
             {popUpMessages.map((message) => {

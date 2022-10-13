@@ -47,8 +47,8 @@ const DylanTateHowarth = ({ data }) => {
 
   return (
     <Layout>
+      <ArtistPageH1 image={nameImage} name={artistName} />
       <section className={hero}>
-        <ArtistPageH1 image={nameImage} name={artistName} />
         <div className={instructions}>
           <h2>Ten Days of Returning</h2>
           <p>

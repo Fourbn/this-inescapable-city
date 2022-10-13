@@ -1,3 +1,13 @@
+.content-section {
+  padding-top: 0;
+  @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom right);
+  background-size: contain;
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom center);
+  }
+}
+
 .images-wrapper {
   margin-top: 4rem;
   display: grid;
@@ -53,6 +63,7 @@
     }
 
     @include break('mobile') {
+
       &.jump1,
       &.jump2,
       &.jump3,

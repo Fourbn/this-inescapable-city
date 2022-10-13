@@ -7,7 +7,7 @@ import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
-import { imageStyles, artistStatement, poem, statement } from "./everette-fournier.module.scss";
+import { contentSection, imageStyles, artistStatement, poem, statement } from "./everette-fournier.module.scss";
 
 const bio = `<p>Everette Fournier (they/them, he/him) is an emerging artist practicing in both Tkaronto [Toronto,ON] and K'jipuktu​k [Halifax], Mi’kmaqi [Nova Scotia]. Everette graduated from NSCAD University for their BFA majoring in Textiles and Fashion in 2021. Everette has dabbled in costume design, performance art, drag, film and music. He sees his practice as multidisciplinary and reactionary depending on each project they approach. Their conceptual work stems from creating small worlds within the folds of our own. Over the last year they have costume designed for PRUDE, by Lou Campbell, Fat Juliet, by Stevey Hunter and #IAMTHECHEESE by Josh MacDonald. Other projects include Macro Digitals: Connections, produced by Eastern Front Theatre, where they were the lead artist collaborating with four other artists to create a short film and immersive projection installation called The Unbetween.</p>`;
 
@@ -17,8 +17,8 @@ const EveretteFournier = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+      <ArtistPageH1 image={nameImage} name={artistName} />
+      <section className={contentSection}>
         {images.map((image) => (
           <GatsbyImage
             key={image.id}

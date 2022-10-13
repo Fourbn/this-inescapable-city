@@ -9,6 +9,7 @@ import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 import audio from "../assets/audio/will-fan-audio.m4a";
 
 import {
+  contentSection, 
   imagesWrapper,
   poemWrapper,
   poem,
@@ -35,8 +36,8 @@ const WilliamHuntFanWu = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+      <ArtistPageH1 image={nameImage} name={artistName} />
+      <section className={contentSection}>
         <div className={imagesWrapper}>
           {images.map((image) => (
             <GatsbyImage

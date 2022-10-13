@@ -9,6 +9,7 @@ import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import {
+  contentSection, 
   scansSection,
   allScans,
   enlargedImg,
@@ -30,8 +31,8 @@ const StewartLegere = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+      <ArtistPageH1 image={nameImage} name={artistName} />
+      <section className={contentSection}>
         <VideoPlayer
           url="https://vimeo.com/753126298/c8b22eee9b"
           playing
@@ -52,39 +53,39 @@ const StewartLegere = ({ data }) => {
             </span>
           </p>
         </VideoPlayer>
-      </section>
-      <section className={scansSection}>
-        <GatsbyImage
-          image={activeImage.gatsbyImageData}
-          alt={activeImage.description}
-          className={enlargedImg}
-        />
-        <div className={allScans}>
-          {images.map((image, index) => (
-            <button
-              key={image.id}
-              onClick={() => setActiveImage(images[index])}
-            >
-              <GatsbyImage
-                image={image.gatsbyImageData}
-                alt={image.description}
-                className={`${fullsizeImage} ${
-                  image.id === activeImage.id ? active : ""
-                }`}
-              />
-              <h3>{image.title}</h3>
-            </button>
-          ))}
-        </div>
-        <div className={mobileScansList}>
-          {images.map((image) => (
-            <Zoom key={image.key}>
-              <GatsbyImage
-                image={image.gatsbyImageData}
-                alt={image.description}
-              />
-            </Zoom>
-          ))}
+        <div className={`${scansSection} grid-wrapper`}>
+          <GatsbyImage
+            image={activeImage.gatsbyImageData}
+            alt={activeImage.description}
+            className={enlargedImg}
+          />
+          <div className={allScans}>
+            {images.map((image, index) => (
+              <button
+                key={image.id}
+                onClick={() => setActiveImage(images[index])}
+              >
+                <GatsbyImage
+                  image={image.gatsbyImageData}
+                  alt={image.description}
+                  className={`${fullsizeImage} ${
+                    image.id === activeImage.id ? active : ""
+                  }`}
+                />
+                <h3>{image.title}</h3>
+              </button>
+            ))}
+          </div>
+          <div className={mobileScansList}>
+            {images.map((image) => (
+              <Zoom key={image.key}>
+                <GatsbyImage
+                  image={image.gatsbyImageData}
+                  alt={image.description}
+                />
+              </Zoom>
+            ))}
+          </div>
         </div>
       </section>
       <ArtistBio bio={bio} />

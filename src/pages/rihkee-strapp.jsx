@@ -13,7 +13,7 @@ import gif2 from "../assets/rihkee/animation2.gif";
 import gif3 from "../assets/rihkee/animation3.gif";
 import gif4 from "../assets/rihkee/animation4.gif";
 
-import { image, gif, wrapper, preload } from "./rihkee-strapp.module.scss";
+import { contentSection, image, gif, wrapper, preload } from "./rihkee-strapp.module.scss";
 
 const bio = `<p>Rihkee Strapp entered the world from a sea of blood, fully grown wearing a gold set of armour. They are an Ayakwew Red River Metis multi-disciplinary artist raised in Northern Ontario by nohkum’s dial-up internet and its dark vistas. Rihkee is an alumni of the Studio [Y] systems leadership fellowship at the MaRS Discovery District. Their highly collaborative work re-appropriates pop-culture, myth and nostalgia, playing with concepts of time and technology often using humour and character to animate their ideas.</p>`;
 
@@ -58,8 +58,8 @@ const RihkeeStrapp = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} rihkee />
+      <ArtistPageH1 image={nameImage} name={artistName} rihkee />
+      <section className={contentSection}>
         <div className={preload}>
           {images.map((image) => (
             <img

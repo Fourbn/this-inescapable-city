@@ -1,3 +1,12 @@
+.content-section {
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom right);
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom right);
+    background-size: contain;
+  }
+}
+
 .video-wrapper {
   position: relative;
   grid-column: 6 / -6;

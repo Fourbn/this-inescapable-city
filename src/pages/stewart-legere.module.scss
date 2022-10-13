@@ -1,5 +1,17 @@
+.content-section {
+  padding-top: 0;
+  @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom right);
+  background-size: contain;
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/mobile-line-bg.svg', top left);
+    background-size: contain;
+    background-repeat: repeat;
+  }
+}
+
 .scans-section {
-  padding: 0 0 8rem;
+  padding: 8rem 0;
 
   @include break('tablet') {
     padding: 8rem 0;
@@ -42,7 +54,7 @@
       transition: border 0.4s;
 
       &.active {
-        border: 5px solid $algae  !important;
+        border: 5px solid $algae !important;
       }
     }
 
@@ -66,10 +78,11 @@
 }
 
 .mobile-scans-list {
+  grid-column: 1 / -1;
   display: none;
   grid-template-columns: 1fr;
   grid-gap: 4rem;
-  
+
   @include break('mobile') {
     display: grid;
   }

@@ -70,8 +70,8 @@ const RowanRedSky = ({ data }) => {
 
   return (
     <Layout>
+      <ArtistPageH1 image={nameImage} name={artistName} />
       <section className={rowanSection}>
-        <ArtistPageH1 image={nameImage} name={artistName} />
         <div
           className={container}
           tabIndex={0}

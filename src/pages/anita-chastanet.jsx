@@ -7,7 +7,7 @@ import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
-import { lyrics, coverArtStyles, bioStyles } from "./anita-chastanet.module.scss";
+import { videoSection, lyrics, coverArtStyles, bioStyles } from "./anita-chastanet.module.scss";
 
 const bio = `<p>a<span class="visual-break" />ngsty</p>
 <p>n<span class="visual-break" />eurotic</p> 
@@ -25,8 +25,8 @@ const AnitaChastanet = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+      <ArtistPageH1 image={nameImage} name={artistName} />
+      <section className={videoSection}>
         <VideoPlayer url="https://vimeo.com/758132925/4ee14fee6a" />
         <GatsbyImage
           image={coverArt.gatsbyImageData}

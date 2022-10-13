@@ -34,6 +34,9 @@
 }
 
 .hero {
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
+  background-size: 150%;
+
   .instructions {
     grid-column: 6 / -6;
     max-width: 800px;
@@ -73,6 +76,7 @@
 
 .transcript-section {
   padding: 6rem 0 8rem;
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
 
   h2 {
     font-size: 4.2rem;
@@ -89,6 +93,7 @@
     .card {
       display: flex;
       margin-bottom: 2rem;
+      background-color: transparent;
 
       h3 {
         font-size: 1.8rem;

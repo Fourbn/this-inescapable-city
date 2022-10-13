@@ -8,6 +8,7 @@ import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import {
+  contentSection, 
   videoWrapper,
   introWrapper,
   divider,
@@ -34,8 +35,8 @@ const LilionaQuarmyne = ({ data }) => {
 
   return (
     <Layout>
-      <section>
-        <ArtistPageH1 image={nameImage} name={artistName} />
+      <ArtistPageH1 image={nameImage} name={artistName} />
+      <section className={contentSection}>
         <div className={videoWrapper}>
           {introIsVisible && (
             <div

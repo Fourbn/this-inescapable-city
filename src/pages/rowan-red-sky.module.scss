@@ -1,8 +1,11 @@
 .rowan-section {
-  h1 {
-    line-height: 1;
+  padding-top: 0;
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom right);
+
+  @include break('tablet') {
+    background-image: none;
+    padding: 0;
   }
-  padding-bottom: 0 !important;
 }
 
 .container {
@@ -19,7 +22,7 @@
     visibility: hidden;
   }
 
-  & > div {
+  &>div {
     pointer-events: none;
   }
 }
@@ -83,10 +86,13 @@
 
 .mobile-fallback {
   display: none;
-  margin: -4rem 0 6rem;
+  padding-top: 0;
+
   @include break('tablet') {
     display: grid;
+    @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom right);
   }
+
   div {
     margin: 4rem 0 0;
     width: 100%;

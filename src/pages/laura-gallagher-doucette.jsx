@@ -25,9 +25,7 @@ const LauraGallagherDoucette = ({ data }) => {
 
   return (
     <Layout>
-      <section className={hero}>
-        <ArtistPageH1 image={nameImage} name={artistName} />
-      </section>
+      <ArtistPageH1 image={nameImage} name={artistName} />
       <section className={cityPoem}>
         <div className={backgroundImg}>
           <div className={poemWrapper}>

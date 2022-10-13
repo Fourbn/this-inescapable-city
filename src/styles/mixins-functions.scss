@@ -50,3 +50,12 @@
     }
   }
 }
+
+/* BACKGROUND IMAGE MIXINS (WITH DIFF POSITIONS/ROTATIONS) */
+
+@mixin bg-line-art($url, $position) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: $position;
+}

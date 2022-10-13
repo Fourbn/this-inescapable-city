@@ -6,9 +6,6 @@
 .lake-poem,
 .essay-section {
   padding: 4rem 0;
-  @include break('mobile') {
-    padding: 4rem 0;
-  }
 
   p,
   h2 {
@@ -31,7 +28,6 @@
 .background-img {
   background-repeat: no-repeat;
   background-size: cover;
-  // padding: 10rem;
 }
 
 .poem-wrapper {
@@ -45,7 +41,9 @@
 }
 
 .city-poem {
-  padding-top: 2rem;
+  padding: 8rem 0;
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
+
   @include break('mobile') {
     padding-bottom: 0;
     padding-top: 0;
@@ -76,6 +74,7 @@
 }
 
 .lake-poem {
+  padding-top: 0;
   @include break('mobile') {
     padding-top: 0;
   }
@@ -92,6 +91,7 @@
 }
 
 .essay-section {
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
   .citation-num {
     font-size: 1.1rem;
     position: relative;

@@ -1,6 +1,17 @@
+.content-section {
+  padding-top: 2rem;
+  @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom right);
+  background-size: contain;
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom right);
+    background-size: contain;
+  }
+}
+
 .wrapper {
   position: relative;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 .image,
@@ -19,6 +30,7 @@
   opacity: 0;
   visibility: hidden;
   z-index: -1;
+
   img {
     visibility: hidden;
   }
