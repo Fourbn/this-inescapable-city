@@ -12,9 +12,9 @@ const Weeds075 = () => {
           id="dragPathWeeds075"
           data-image-group="weeds"
           fill="white"
-          stroke="none"
+          stroke="white"
           opacity="0"
-          strokeWidth="1"
+          strokeWidth="7"
           d="M 121.00,74.00
            C 118.48,72.82 116.36,71.51 114.33,69.56
              112.81,68.09 107.24,62.53 106.77,60.90
