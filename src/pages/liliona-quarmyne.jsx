@@ -8,7 +8,7 @@ import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import {
-  contentSection, 
+  contentSection,
   videoWrapper,
   introWrapper,
   divider,
@@ -26,21 +26,23 @@ const LilionaQuarmyne = ({ data }) => {
   const { artistName, nameImage } = data.contentfulArtistPage;
 
   const [introIsVisible, setIntroIsVisible, introFadeProps] = useFade(true);
-  const [showDivider, setShowDivider] = useState(true);
+  const [dividerVisible, setDividerVisible, dividerFadeProps] = useFade(true);
 
   const handleIntroVideoEnded = () => {
-    setShowDivider(false);
+    setDividerVisible(false);
     setIntroIsVisible(false);
   };
 
   return (
     <Layout>
       <ArtistPageH1 image={nameImage} name={artistName} />
-      <section className={contentSection}>
-        <div className={videoWrapper}>
+      <section
+        className={contentSection}
+      >
+        <div className={`${videoWrapper} grid-wrapper`}>
           {introIsVisible && (
             <div
-              className={`${introWrapper} ${introFadeProps.className}`}
+              className={`${introWrapper} ${introFadeProps.className} grid-wrapper`}
               onAnimationEnd={introFadeProps.onAnimationEnd}
             >
               <VideoPlayer
@@ -52,8 +54,16 @@ const LilionaQuarmyne = ({ data }) => {
               />
             </div>
           )}
-          {showDivider && <div className={divider} />}
-          <VideoPlayer url="https://vimeo.com/753125894/f16b9f1293" dividerClass={white} />
+          {dividerVisible && (
+            <div
+              onAnimationEnd={dividerFadeProps.onAnimationEnd}
+              className={`${divider} ${dividerFadeProps.className}`}
+            />
+          )}
+          <VideoPlayer
+            url="https://vimeo.com/753125894/f16b9f1293"
+            dividerClass={white}
+          />
         </div>
       </section>
       <ArtistBio bio={bio} />

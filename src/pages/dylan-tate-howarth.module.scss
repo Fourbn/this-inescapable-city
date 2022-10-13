@@ -39,12 +39,12 @@
 
   .instructions {
     grid-column: 6 / -6;
-    max-width: 800px;
     margin: 1.5rem 0 5rem;
-
+    
     h2 {
       font-size: 4.2rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
     @include break('tablet') {
@@ -52,7 +52,16 @@
     }
   }
 
+  .card-grid {
+    display: grid;
+    grid-column: 1 / -1;
+    background-color: $river-blue;
+    padding: 4rem 0 8rem;
+    width: 100%;
+  }
+
   .card {
+    grid-column: 6 / -6;
     background-color: $grey-bg;
     margin-bottom: 1.5rem;
 
@@ -75,11 +84,11 @@
 }
 
 .transcript-section {
-  padding: 6rem 0 8rem;
+  padding: 0 0 4rem;
   @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
 
   h2 {
-    font-size: 4.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
   }
 

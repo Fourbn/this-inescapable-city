@@ -1,5 +1,9 @@
 .page-content {
   min-height: 100vh;
+  align-content: start;
+  h1 {
+    margin-bottom: 2rem;
+  }
   @include bg-line-art('../assets/desktop-line-bg.svg', top right);
 
   @include break('mobile') {

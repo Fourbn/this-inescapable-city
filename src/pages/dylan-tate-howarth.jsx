@@ -58,7 +58,7 @@ const DylanTateHowarth = ({ data }) => {
           </p>
         </div>
         <VideoPlayer url="https://vimeo.com/755582532/7accf22b5d" />
-        <ol className={cardGrid}>
+        <ol className={`${cardGrid} grid-wrapper`}>
           {content.map((audioGroup) => (
             <li
               key={audioGroup.id}

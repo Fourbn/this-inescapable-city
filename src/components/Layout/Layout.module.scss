@@ -18,8 +18,12 @@
 
 .icon {
   font-size: 5rem;
-  color: $river-blue;
+  color: $algae;
   transition: color 0.3s;
+
+  path {
+    fill: $grey-bg !important;
+  }
 
   @include break('mobile') {
     font-size: 3.8rem;
