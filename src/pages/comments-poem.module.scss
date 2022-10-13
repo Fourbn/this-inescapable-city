@@ -1,13 +1,20 @@
 .comments-hero {
   align-items: start;
   align-content: start;
+  @include bg-line-art('../assets/desktop-line-bg.svg', top right);
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/mobile-line-bg.svg', top left);
+  }
+
   h1 {
-    text-transform: lowercase;
     margin-bottom: 2rem;
+
     @include break('mobile') {
       font-size: 4rem;
     }
   }
+
   min-height: auto !important;
 }
 
@@ -15,7 +22,7 @@
   background-color: $river-blue;
   padding: 8rem 0;
   min-height: 50vh;
-  
+
   .comment-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -38,7 +45,7 @@
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   textarea {
     width: 100%;
     min-height: 125px;

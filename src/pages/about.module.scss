@@ -1,4 +1,11 @@
 .page-content {
+  min-height: 100vh;
+  @include bg-line-art('../assets/desktop-line-bg.svg', top right);
+
+  @include break('mobile') {
+    @include bg-line-art('../assets/mobile-line-bg.svg', top left);
+  }
+
   p {
     margin-bottom: 2rem;
   }
