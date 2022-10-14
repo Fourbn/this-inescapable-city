@@ -12,7 +12,9 @@ import {
   thankYouMsg,
   submitCommentForm,
   commentListSection,
+  loadingScreen,
 } from "./comments-poem.module.scss";
+import DelayedRender from "../components/DelayedRender/DelayedRender";
 
 const CommentsPoem = () => {
   const [comments, setComments] = useState([]);
@@ -100,18 +102,38 @@ const CommentsPoem = () => {
           )}
         </section>
         <section className={commentListSection}>
-          <ul className={commentList}>
-            {comments.map((commentObj) => {
-              const { key, comment } = commentObj;
-              return (
-                <CommentBox
-                  key={key}
-                  comment={comment.comment}
-                  colorCycle={cardBgColorCycle()}
-                />
-              );
-            })}
-          </ul>
+          {comments.length ? (
+            <ul className={commentList}>
+              {comments.map((commentObj) => {
+                const { key, comment } = commentObj;
+                return (
+                  <CommentBox
+                    key={key}
+                    comment={comment.comment}
+                    colorCycle={cardBgColorCycle()}
+                  />
+                );
+              })}
+            </ul>
+          ) : (
+            <DelayedRender delay={200}>
+              <div className={loadingScreen}>
+                <iframe
+                  src="https://giphy.com/embed/j6XZlxTBLE1taAzsGV"
+                  width="80"
+                  height="80"
+                  frameBorder="0"
+                  class="giphy-embed"
+                  allowFullScreen
+                ></iframe>
+                <p className="sr-only">
+                  <a href="https://giphy.com/stickers/MotionIsland-loading-infinity-infinite-j6XZlxTBLE1taAzsGV">
+                    via GIPHY
+                  </a>
+                </p>
+              </div>
+            </DelayedRender>
+          )}
         </section>
       </Layout>
       <Footer simple />
