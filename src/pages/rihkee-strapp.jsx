@@ -13,7 +13,7 @@ import gif2 from "../assets/rihkee/animation2.gif";
 import gif3 from "../assets/rihkee/animation3.gif";
 import gif4 from "../assets/rihkee/animation4.gif";
 
-import { contentSection, image, gif, wrapper, preload } from "./rihkee-strapp.module.scss";
+import { contentSection, image, gif, wrapper, preload, didactic } from "./rihkee-strapp.module.scss";
 
 const bio = `<p>Rihkee Strapp entered the world from a sea of blood, fully grown wearing a gold set of armour. They are an Ayakwew Red River Metis multi-disciplinary artist raised in Northern Ontario by nohkum’s dial-up internet and its dark vistas. Rihkee is an alumni of the Studio [Y] systems leadership fellowship at the MaRS Discovery District. Their highly collaborative work re-appropriates pop-culture, myth and nostalgia, playing with concepts of time and technology often using humour and character to animate their ideas.</p>`;
 
@@ -87,6 +87,16 @@ const RihkeeStrapp = ({ data }) => {
             className={gif}
             style={gif4Placements[gif4Position]}
           />
+        </div>
+        <div className={didactic}>
+          <h2>About the work</h2>
+          <p>
+            This Inescapable City” reminded me of a boat ride on Lac Seul I took
+            this summer with my uncle. The lake was incredibly still and the
+            brightness of the sun drew afterimages across my vision. I asked
+            DALL.E 2 to create the same scene in Toronto and used these images
+            as the backdrop for animations inspired by that day on the water.
+          </p>
         </div>
       </section>
       <ArtistBio bio={bio} />

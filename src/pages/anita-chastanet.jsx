@@ -38,7 +38,7 @@ const AnitaChastanet = ({ data }) => {
           <p>
             If only though my dreams I reach your heart
             <br />
-            If only in my dreams you pull me in
+            If only in my dreams you pull me into you
             <br />
             If only though my dreams I reach your heart
             <br />
@@ -51,7 +51,7 @@ const AnitaChastanet = ({ data }) => {
             <br />
           </p>
           <p>
-            If only in my dreams you’re close to touch
+            If only in my dreams I'm not too much
             <br />
             If only in my dreams time isn’t lonely
             <br />
@@ -67,19 +67,19 @@ const AnitaChastanet = ({ data }) => {
           </p>
           <p>Ooos and aas</p>
           <p>
-            Lone hearts
+            Young hearts
             <br />
-            Beating lone hearts
+            Beating young hearts
             <br />
-            They say put me to sleep
+            They say I want to sleep
             <br />I want to escape to my dreams
           </p>
           <p>
-            Lone hearts
+            Young hearts
             <br />
-            Beating lone hearts
+            Beating young hearts
             <br />
-            They say put me to sleep
+            They say I want to sleep
             <br />I want to escape to my dreams
           </p>
         </div>
