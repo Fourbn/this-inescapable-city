@@ -1,0 +1,54 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(239, 232, 245, 0.6);
+  display: none;
+
+  @include break('tablet') {
+    display: flex;
+  }
+}
+
+.modal {
+  background-color: shade($river-blue, 20%);
+  width: 80%;
+  max-width: 400px;
+  padding: 4rem;
+  position: relative;
+
+  button {
+    padding: 0;
+    background-color: transparent;
+    color: $grey-bg;
+    border: 1px solid transparent;
+    font-size: 5rem;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    transform: rotate(45deg);
+
+    &:hover,
+    &:focus {
+      color: $deep-waters;
+    }
+  }
+
+  h2,
+  p {
+    color: $grey-bg;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+}

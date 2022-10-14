@@ -119,6 +119,7 @@ const CommentsPoem = () => {
             <DelayedRender delay={200}>
               <div className={loadingScreen}>
                 <iframe
+                  title="loading-giphy"
                   src="https://giphy.com/embed/j6XZlxTBLE1taAzsGV"
                   width="80"
                   height="80"

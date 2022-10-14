@@ -8,7 +8,8 @@
   align-items: flex-end;
 
   @include break('tablet') {
-    display: block;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .bg-wrapper {
@@ -22,6 +23,7 @@
 
     @include break('tablet') {
       max-width: 100%;
+      order: 1;
     }
   }
 
@@ -53,6 +55,7 @@
       padding: 2rem 4.5rem 0;
       background-color: shade($river-blue, 30%);
       text-align: right;
+      order: 2;
 
       li a {
         color: $thistle;
