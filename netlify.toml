@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/comments-backend"
+  [headers.values]
+  Basic-Auth = "probably:TheSeaTheSea1313"
