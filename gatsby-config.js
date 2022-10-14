@@ -23,6 +23,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: "This Inescapable City",
+        short_name: "TIS",
+        start_url: "/",
+        background_color: "#f0f0f0",
+        theme_color: "#08a3c9",
+        display: "standalone",
         icon: "src/assets/icon.png",
       },
     },
