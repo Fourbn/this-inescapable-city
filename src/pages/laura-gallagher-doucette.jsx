@@ -6,7 +6,6 @@ import ArtistBio from "../components/ArtistBio/ArtistBio";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
 import {
-  hero,
   cityPoem,
   lakePoem,
   poemWrapper,
