@@ -47,6 +47,10 @@ const WilliamHuntFanWu = ({ data }) => {
             />
           ))}
         </div>
+        <p>
+          Sound piece and poems were conceived in parallel -- we invite you to
+          engage them simultaneously
+        </p>
         <AudioPlayer audioSrc={audio} autoPlay className={audioBar} />
         <div className={poemWrapper}>
           <div className={poem}>

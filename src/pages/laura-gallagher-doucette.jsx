@@ -30,80 +30,80 @@ const LauraGallagherDoucette = ({ data }) => {
           <div className={poemWrapper}>
             <h2>The City</h2>
             <p>
-              There is The City. The City is the same difference. Languages of
-              longing. Florid and gleaming through airwaves, buds reblooming,
-              lip gloss. Here, leaves underfoot. Autumn or not, outside a
-              season, The City edges and drops against the pavement, drops
-              against the pavement, and rises crystalline. Here, the curve of
-              College Street. Here, Avenue’s straight line.
+              There is The City. Ragged and neat. There it is. Concrete, chrome.
+              Glasses, glances, drinks, and languages. Longing. Gleaming,
+              reblooming, lip gloss. Airwaves, quick. Nails scraping. Here,
+              leaves underfoot. Autumn or not, outside a season, The City edges
+              and drops against the pavement. It rises crystalline. Here, the
+              curve of College Street. Here Avenue’s straight line.
             </p>
             <p>
-              There is the pace of it, cycling, tangled stereos, a speed of
-              still time, perfume of mangoes and streetlights, a slice of
+              There is the pace of it, cycling. Tangled stereos, a speed of
+              still time, perfume of mangoes and streetlights. A slice of
               nightlife ripens. There is The City. There is The City. There,
               elevators and cortados. There, linen and walls. The City. Blocks
               and blocks. There it is. There it is. There it is.
             </p>
             <p>
-              The City is lush where watered. It is appointments and olives.
-              Westbound, eastbound, DVP. Bridge-glimpsed broccoli crowns of
-              trees. There are suburban boulevards somewhere, deep and tall with
-              oaks. There are mansions. There is air freshener. There is The
-              City you can’t afford.
+              The City is parched and lush. Appointments, olives. Westbound,
+              eastbound, DVP. The crowns of bridge-glimpsed trees. There are
+              suburban boulevards somewhere, catalpas deep and tall.
             </p>
             <p>
-              Bunches of weather without an awning. There are entirely different
-              streets, there are paths, different portals. There are whole
-              neighbourhoods back to back, like talkless lovers. There is
-              leather. There are driveways. There are peonies like exhausted
-              ladies. They undo themselves on the lawn. Here is The City.
+              There are bunches of weather without awnings. There is beauty
+              pressed and pressed for time. Entirely different streets and there
+              are paths, different portals. Whole neighbourhoods stacked back to
+              back like talkless lovers. There is leather. There are driveways.
+              There are peonies like magenta taffeta undoing themselves on
+              lawns.
             </p>
             <p>
-              Bloor, Dixon, Lakeshore, Finch, Dovercourt, Eglinton, Brock. There
-              is garbage early in the morning and the click of shoes. The City
-              where you least expect it. Efficient, porous, and tilting.
-              Directions agenda asphalt.
+              There is Bloor, Dixon, Lakeshore, Finch, Dovercourt, and Brock.
+              There is the click of shoes here again and again and The City.
+              Here, where you least expect it. Handfuls of underpass. Tufts of
+              seeded burrs beneath hydro wires, beneath sky. Porous and tilting,
+              The City edges in, dealing in efficiencies, directions, agenda,
+              asphalt.
             </p>
             <p>
-              There is always down the street, hydro wires, and your thoughts
-              spangling everywhere, yes, everywhere you look. Your thoughts
-              shimmer, reminding you, reminding you, of your body here in The
-              City’s folds. You live inside The City. Don’t you think to
-              yourself,{" "}
-              <span className="italics">does The City live in me?</span>
+              There is always down the street. Your thoughts spangled
+              everywhere, yes, everywhere you look. They shimmer, reminding you,
+              reminding you, of your body neat in The City’s folds. Your coat
+              buttoned against October and still the brightness of Dahlias, the
+              tenacity of oak leaves. Against the train tracks, beneath the arch
+              of Dundas, the poplars rustle and rustle.
             </p>
             <p>
-              The City is and is not itself. You know this. The City is
-              tremendous, rebar and rented. You sicken sometimes when you think
-              of it. So don’t. There’s not much more to say.
+              You know The City is, is not, itself. The City is tremendous,
+              rented, rebar. You sicken sometimes when you think of it. The way
+              The City swallows, is swallowed. Don’t think of the figures.
+              Don’t. Still, the people on the Dufferin bus, the people on the
+              Dufferin bus, plastic bags and bangles. Someone praying, someone
+              yelling, someone else. There, pigeons like a school of fish swirl
+              up the sky. There is one copper one. There is one copper one.
+              Murals and the smell of exhaust.
             </p>
             <p>
-              Still, the people on the Dufferin bus, the people on the Dufferin
-              bus, plastic bags and bangles, someone praying, someone yelling,
-              someone else. There, pigeons like a school of fish swirl up the
-              sky. There is one copper one. There is one copper one. Murals and
-              the smell of exhaust. A pint, a pocket, a plying, a plying, a
-              plying at your coat.
+              Cul-de-sac crescents, the light of living rooms. Starlings,
+              seasonally, starlings. Passersby and their wardrobes, their gazes,
+              their cups of coffee. There are these routes that sickle and
+              spoil, spool and undo you. Buckles bend in streetcar lines.
+              Instructions fluoresce. And transfer.
             </p>
             <p>
-              Cul-de-sacs and crescents, the light of living rooms.
-              Temperatures, a desire path, brittle grass underfoot. Starlings,
-              seasonally, starlings. Passersby, residential, commercial, you
-              sense scent. Wardrobes of it. These routes, sickle and spoil,
-              buckles bend in streetcar routes. Instructions fluoresce. A
-              transfer.
+              The City is quite something. Rivers brick. Goldenrod, stands of
+              aster. Cedar and the smell of santo palo. Whole days of morning.
+              Whole days 3pm. Somewhere, a ravine. There, where songbirds
+              embroider. Even there, The City towers.
             </p>
             <p>
-              The City is quite something. Alleyway and rivered brick. It
-              sticks. This something. Something. In your throat, the edge of
-              release, release, the springload of desire. Somewhere, a ravine.
-              There, where songbirds embroider. Even there, The City towers.
-            </p>
-            <p>
-              There is a timeless timeless weather, whole days of morning, whole
-              days of 3pm. Darkness startles now - you only know the milk-sky of
-              smog, the ceiling of light the clouds return to electricity
-              nightly.
+              Something sticks in your throat. You have swallowed accumulation.
+              And though you feel the edge of release, the edge of release, The
+              City doesn’t. Darkness startles now. You only know the milk-sky of
+              smog, the ceiling of light that the clouds return to electricity
+              nightly. There is no time like the present and it presses its
+              point into you. There is a kind of beauty here. There it is. You
+              can feel it. You can touch.
             </p>
           </div>
         </div>
@@ -115,56 +115,82 @@ const LauraGallagherDoucette = ({ data }) => {
             <p>
               At the base of The City, there is water. At the heart of it, river
               veins.
+              <br />
+              This place, this base, a Lake.
+              <br />
+              Its name holds something of a clue. A darkness and collection of
+              sounds.
             </p>
             <p>
-              The place, this base, a Lake. Its name holds something of a clue,
-              a darkness and collection of sounds in a single syllable: Lake. It
-              laps, it shades. Evaporation lingers, the long light slanted heavy
-              and gold across your gaze, the sharp light of silver slivering the
-              water, a coin, a figment, a fragment. Waves fracture sudden and
-              easy, foam and release like a seagull’s cry. Airy and white.
-              Tumbling and tearing, specks of itself, it speaks to itself, it
-              speaks to itself, it speaks to you, these waves.
+              In a single syllable.
+              <br />
+              Laps and shades. Evaporates and lingers. The long light slants
+              heavy gold across your gaze.
+              <br />
+              The sharp light of silver slivers the water, a coin, a fragment.
+              <br />
+              Waves fracture sudden and easy, foam and release, foam and
+              release, the cry of a gull.
+              <br />
+              Airy and white. Tumbling and tearing, specks of itself, it speaks
+              to itself, it speaks to itself.
+              <br />
+              Opening and closing hard around softening blue. Fading plumes of
+              afternoon. Evening. There, where the water’s ache finds its
+              soothe. It edges over.
+              <br />
+              Sails, smooth, glass and rugged. Lake, this place water whispers,
+              unspools to the highway’s rush.
             </p>
             <p>
-              There is an opening, closing hard around softening blue. Fading
-              plumes of afternoon. Evening. There, where the water’s ache finds
-              its sooth, it edges over. Sails, smooth, glass and ragged. Lake,
-              this place water whispers, unspools, says{" "}
-              <span className="italics">stay stay stay</span>, with spray
-              drowned out by speed.
+              Do you see yourself? Wind palming your back. By comparison your
+              jean jacket, untrue to colour. Here where taupe, grey, lavenders,
+              the beginning of blue, the shade of sunlight.
             </p>
             <p>
-              Clouds translate the water, through interruption, interruption,
-              the waves and the waves on the breakwater break the highway’s
-              rush. Break its hush. A clatter drifting clouds and clouds and
-              your own self carried over the wind. A returning returning.
+              Clouds translate the water, through interruption, interruption.
+              The waves and the waves on the breakwater break the smoothness of
+              commuting. A clatter of clouds cloud your impression of this
+              place.
             </p>
             <p>
-              It hardens what it touches. The Lake is by contrast. Lake to
-              shore. To Lakeshore. Ice scrapes its still surface and even then,
-              the Gardiner. Even then, portraiture. Even then. Even though.
-              Picture this. There it hangs. There it is. You have it, it has
-              you, gazing, grazing your hair, your jacket, chapped lips. In its
-              glazes. Sand hushes plink of pebbles. The silent sound of stones.
+              Night herons, grocery carts, skylines brilliant with daybreak.
+              Billboards and the leak of air-conditioned air outside. There you
+              are. There, by the lake’s rippling side. There you are by her
+              breathing body. Water. Restless, sleepless, still. Wriggling life
+              in waves. There is a lesson here, a lesson here, you don’t know
+              how to know.
             </p>
             <p>
-              Night herons, grocery carts, skylines the other side. Billboards
-              and air-conditioned air leaking Lakeward. There you are, there, by
-              the lake’s side, its breathing body. This body, water. Restless,
-              sleepless, still. Wriggling life in waves. There is a lesson here,
-              there is a lesson here, you don’t know how to know.
+              The Lake is by contrast. It hardens what it touches.
+              <br />
+              Lake to shore. To Lakeshore. Ice scrapes its still surface and
+              even then, the Gardiner.
+              <br />
+              Even then, an image, moving. Even then. Even though. There it
+              hangs. Picture this.
+              <br />
+              There it is. You have it. It has you.
             </p>
             <p>
-              This is the Lake we bike to, young and late. This is the Lake
-              commuters, tourists, ambulances speed by, stroll by. Asters,
-              algae, boulders, trains, construction, construction, over there.
-              In here, the lake whispers, sinking, rolling, reaching, riding,
-              waves and waves and waves.
+              Gazing, grazing your hair, your hands, your lips chapped and
+              speechless. In its glazes.
+              <br />
+              Sand hushes pebbles. The plink of stones. These silent sounds,
+              moving and mauve. All that won’t lend itself to collection stuffed
+              in your pockets like you could take this freedom home and hand it
+              to someone you love. Beer bottle brown smothered smooth.
             </p>
             <p>
-              A Lake that makes the lakeshore what it is. What it is. What it
-              is. There it is.
+              Here, algae, cranes, the river mouths.
+              <br />
+              In here, the lake whispers. Sinking, rolling, reaching, riding,
+              waves and waves and waves.{" "}
+              <span className="italics">I wish you knew how to answer</span>,
+              you think, barely noticing you’re reabsorbed already. Back in The
+              City. Still, some part of you, tidal, ebbs south always. To the
+              tug of what makes The City what it is. Its open border. An
+              unmistakable body. Flowing hard against all this work.
             </p>
           </div>
         </div>
@@ -172,7 +198,7 @@ const LauraGallagherDoucette = ({ data }) => {
       <section className={essaySection}>
         <h2>
           I Thought This Would be an Essay About Gertrude Stein, but is that
-          What I Wrote
+          What I Wrote: <span>a reflection of these poems?</span>
         </h2>
         <p>
           This past summer, away from this city and this lake, I caught covid. I
@@ -189,42 +215,44 @@ const LauraGallagherDoucette = ({ data }) => {
         </p>
         <p>
           And so I made their portraits one day while they were out, an
-          automatic sort of writing that still seemed to stir something for
-          them, the readers. (Perhaps that is always the case when it is a
-          portrait of oneself.)
+          automatic sort of writing, tumbled words. These portraits seemed to
+          stir something for them, the readers, and so, with{" "}
+          <span className="italics">This Inescapably City</span> on the horizon
+          I thought, “great, I have a form for my piece. These portraits work.”
+          (Though perhaps this feeling of something stirred is always the case
+          when one “sees” a portrait of oneself.)
         </p>
         <p>
-          The City and Lake made less automatic subjects. This surprised me; we
-          at Probably have been, in a sense, making portraits of The City and
+          But The City and Lake made less automatic subjects. This surprised me;
+          we at Probably have been, in a sense, making portraits of The City and
           Lake for the five years of our existence. In fact, in all the work we
           have collectively compiled, The City and Lake have been the scenes and
-          characters we’ve attempted to offer our audiences, again and again. We
-          have tried to tell the same story another way, another time for
-          another group.{" "}
+          characters we’ve attempted to offer our audiences. We have tried to
+          cast these same characters another way another time for another group
+          again and again.{" "}
           <span className="italics">This is the same story but different</span>,
           said the characters of{" "}
           <span className="italics">Underwater Overwater</span>,
-          <span className={citationNum}>1</span>{" "}
-          interrupting and clarifying, contradicting and complementing each
-          other, weaving past and future into a present tense, some glimpse of
-          this place, some impression.
+          <span className={citationNum}>1</span> interrupting and clarifying,
+          contradicting and complementing each other as they wove past and
+          future into a present tense, grasping some glimpse of this place.
         </p>
         <p>
           Here again, the same story but different. I’ve tried to make The City
           and Lake fit into momentary scales. There is The City. There’s the
-          Lake. In little letters, black and white. Maybe even, in your mind’s
-          eye.
+          Lake. In words on a screen. Hopefully also in your mind’s eye, with
+          words or wordlessly, some impression of where you are has formed.
         </p>
         <p>
           I thought this would be an essay about Gertrude Stein. It doesn’t seem
-          to me. Yet: let me briefly say of her lectures on portraits I read
-          once rid of fever…
+          to be. Yet: let me briefly say of her lectures on portraits I read
+          once the fever left me.
         </p>
         <p>
           Stein insists there is no repetition, no such thing as repetition;
           there is only insistence.<span className={citationNum}>2</span> She
           insists with great emphasis in her lecture, insisting with the word
-          insisting again and again. She says,{" "}
+          “insisting” again and again. She says,{" "}
           <span className="quote">
             No matter how often what happened had happened any time any one told
             anything there was no repetition.
@@ -237,8 +265,9 @@ const LauraGallagherDoucette = ({ data }) => {
             in order to [make a portrait] there must be no remembering,
             remembering is repetition, remembering is also confusion.
           </span>
-          <span className={citationNum}>5</span> Insistence–insistence–on the
-          other hand, is clarity.
+          <span className={citationNum}>5</span> Insistence–
+          <span className="italics">insistence</span>–on the other hand, is
+          clarity.
         </p>
         <p>
           Insistence is genius: it is listening and talking at once: two in one
@@ -246,35 +275,40 @@ const LauraGallagherDoucette = ({ data }) => {
         </p>
         <p>
           For Stein, nothing changes, but there is emphasis, which is movement.
-          <span className={citationNum}>7</span>{" "}
-          We recognize existence by its movement, and so, for the portrait to
-          exist, to exist with emphasis and live, it must contain no repetition,
-          which is confusion and memory.
+          <span className={citationNum}>7</span> We recognize existence by its
+          movement, and so, for the portrait to exist, to exist with emphasis
+          and live, it must contain no repetition, which is confusion and
+          memory.
         </p>
         <p>
           I think, perhaps, the reason why these portraits, these portraits of
           The City and Lake were not so automatic was how much I felt I needed
-          to remember in order to write them for you. A whole childhood of this
-          city. A poetry of lakewater. Some system. Inescapable amounts.
+          to remember in order to write them: a whole childhood of this city, a
+          poetry of lakewater. Some system, inescapable amounts.
         </p>
         <p>
-          Because so much of what I look out at in The City are places loss
-          took. I want the losses of this city recorded. I want to measure what
-          is gone, what will be gone, what has been gone.
+          When I look out at The City, so much of what I want to reassemble is
+          what I no longer see: I want the losses of this city recorded, I want
+          to capture its changes, perhaps in some attempt to halt something. I
+          want to measure what is gone, what will be gone, what has been gone.
+          Surely this is memory. Stein would say then, I am wading into
+          confusion. I am not giving what is living.
         </p>
-        <p>(And the lake, the lake, the lake.)</p>
         <p>
+          And the Lake. The Lake. The Lake.{" "}
           <span className="quote">
             Is there repetition or is there insistence.
           </span>
           <span className={citationNum}>8</span>
         </p>
         <p>
-          Do any of these fragments–mine, yours, theirs on these other
-          pages–repeat anything or do they insist. The City and Lake. There it
-          is. There they are. There.{" "}
+          Do any of these fragments–mine, yours, all collected here–repeat
+          anything or do they insist. The City and Lake.
         </p>
-        <p>Lost, returning, tidal, vibrant, present in collapse.</p>
+        <p>
+          There it is. There they are. There. Lost, returning, tidal, vibrant,
+          present in collapse.{" "}
+        </p>
         <p>
           Two in one and one in two, moving, genius, gone. Reappearing. As in a
           dream.
@@ -311,9 +345,8 @@ const LauraGallagherDoucette = ({ data }) => {
               <span className={citation}>
                 Interestingly, Stein notes that a portrait is, in a sense, two
                 things (its subject and itself). She describes this as{" "}
-                <span className="quote">a bother,</span>{" "}
-                but does not dwell on it. (Stein,{" "}
-                <span className="italics">ibid</span>, 105).
+                <span className="quote">a bother,</span> but does not dwell on
+                it. (Stein, <span className="italics">ibid</span>, 105).
               </span>
             </li>
             <li>

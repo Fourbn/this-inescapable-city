@@ -1,13 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
-import { videoSection, lyrics, coverArtStyles, bioStyles } from "./anita-chastanet.module.scss";
+import { videoSection, lyrics, bioStyles } from "./anita-chastanet.module.scss";
 
 const bio = `<p>a<span class="visual-break" />ngsty</p>
 <p>n<span class="visual-break" />eurotic</p> 
@@ -28,13 +27,8 @@ const AnitaChastanet = ({ data }) => {
       <ArtistPageH1 image={nameImage} name={artistName} />
       <section className={videoSection}>
         <VideoPlayer url="https://vimeo.com/758132925/4ee14fee6a" />
-        <GatsbyImage
-          image={coverArt.gatsbyImageData}
-          alt={coverArt.description}
-          className={coverArtStyles}
-        />
         <div className={lyrics}>
-          <h2>Lyrics</h2>
+          <h2>swim</h2>
           <p>
             If only though my dreams I reach your heart
             <br />
@@ -84,7 +78,7 @@ const AnitaChastanet = ({ data }) => {
           </p>
         </div>
       </section>
-      <ArtistBio bio={bio} className={bioStyles} />
+      <ArtistBio bio={bio} className={bioStyles} headshot={coverArt} />
     </Layout>
   );
 };

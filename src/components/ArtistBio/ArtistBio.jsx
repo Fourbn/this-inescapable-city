@@ -1,18 +1,24 @@
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 
-import { bioStyles } from "./ArtistBio.module.scss";
+import { bioStyles, textWrapper, headshotStyles, headshotIncluded } from "./ArtistBio.module.scss";
 
-const ArtistBio = ({ bio, headshot = false, plural = false, className }) => {
+const ArtistBio = ({ bio, headshot, plural = false, className }) => {
   return (
-    <section className={`${bioStyles} ${className}`}>
+    <section className={`${bioStyles} ${className} ${headshot ? headshotIncluded : ""}`}>
       <h2>About the artist{plural && "s"}</h2>
       <div
+      className={textWrapper}
         dangerouslySetInnerHTML={{
           __html: bio,
         }}
       />
       {headshot && (
-        <img src="https://place-puppy.com/300x200" alt="Placeholder alt text" />
+        <GatsbyImage
+          image={headshot.gatsbyImageData}
+          alt={headshot.description}
+          className={headshotStyles}
+        />
       )}
     </section>
   );

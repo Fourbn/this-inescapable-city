@@ -41,7 +41,7 @@
 }
 
 .city-poem {
-  padding: 8rem 0;
+  padding: 8rem 0 0;
   @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom);
 
   @include break('mobile') {
