@@ -20,7 +20,6 @@ const bio = `<p>Laura Gallagher-Doucette is a cofounder of Probably Theatre Coll
 
 const LauraGallagherDoucette = ({ data }) => {
   const { artistName, nameImage, images } = data.contentfulArtistPage;
-  console.log(images);
 
   return (
     <Layout>

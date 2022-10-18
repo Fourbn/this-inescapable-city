@@ -82,7 +82,6 @@ const RowanRedSky = ({ data }) => {
   const [activeMobileImage, setActiveMobileImage] = useState("land");
 
   const mobileImages = images.map((image) => {
-    console.log(fadeHookGroups, image.title);
     const { id, description, title, gatsbyImageData } = image;
     const [groupFadeState, setGroupFadeState, groupFadeProps] =
       fadeHookGroups[title];
