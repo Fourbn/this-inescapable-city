@@ -93,10 +93,36 @@
     @include bg-line-art('../assets/flipped-desktop-line-bg.svg', bottom right);
   }
 
-  div {
-    margin: 4rem 0 0;
+  .control-panel {
+    @include break('tablet') {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .mobile-image-wrapper {
+    position: relative;
+    margin: 4rem 0 1rem;
+    max-width: 600px;
+    justify-self: center;
+  }
+
+  .placeholder-img {
+    opacity: 0;
+  }
+
+  .mobile-image {
+    position: absolute;
     width: 100%;
-    height: 600px;
-    background-color: $river-blue;
+    height: 100%;
+    left: 0;
+  }
+
+  .active-mobile-image-styles {
+    z-index: 9999;
+  }
+
+  .hidden-mobile-image-styles {
+    z-index: 1;
   }
 }

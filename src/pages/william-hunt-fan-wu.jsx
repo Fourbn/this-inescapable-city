@@ -18,6 +18,7 @@ import {
   jump3,
   jump4,
   audioBar,
+  instructions
 } from "./william-hunt-fan-wu.module.scss";
 
 const AudioPlayer = loadable(() =>
@@ -47,7 +48,7 @@ const WilliamHuntFanWu = ({ data }) => {
             />
           ))}
         </div>
-        <p>
+        <p className={instructions}>
           Sound piece and poems were conceived in parallel -- we invite you to
           engage them simultaneously
         </p>

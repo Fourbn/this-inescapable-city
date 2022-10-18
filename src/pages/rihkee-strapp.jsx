@@ -91,9 +91,9 @@ const RihkeeStrapp = ({ data }) => {
         <div className={didactic}>
           <h2>About the work</h2>
           <p>
-            This Inescapable City” reminded me of a boat ride on Lac Seul I took
-            this summer with my uncle. The lake was incredibly still and the
-            brightness of the sun drew afterimages across my vision. I asked
+            “This Inescapable City” reminded me of a boat ride on Lac Seul I
+            took this summer with my uncle. The lake was incredibly still and
+            the brightness of the sun drew afterimages across my vision. I asked
             DALL.E 2 to create the same scene in Toronto and used these images
             as the backdrop for animations inspired by that day on the water.
           </p>

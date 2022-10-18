@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `This Inescapable City`,
-    description: `Artistic installation website for This Inescapable City`,
+    description: `This Inescapable City is a digital exhibition presented by Probably Theatre and featuring work by thirteen artists engaging with themes of landscapes, cityscapes and waterscapes.`,
     siteUrl: `https://www.thisinescapablecity.ca`,
   },
   plugins: [

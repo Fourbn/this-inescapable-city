@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import useFade from "../hooks/useFade";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout/Layout";
 import LandImages from "../components/ImageGroups/LandImages";
@@ -10,19 +11,18 @@ import WeedsImages from "../components/ImageGroups/WeedsImages";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
 
-// import mobileCity from "../assets/rowan-temp/mobile_CITY.png"
-// import mobileLand from "../assets/rowan-temp/mobile_LAND.png";
-// import mobileWater from "../assets/rowan-temp/mobile_WATER.png";
-// import mobileWeeds from "../assets/rowan-temp/mobile_WEEDS.png";
-
 import {
   rowanSection,
   container,
   object,
   controlPanel,
   mobileFallback,
+  mobileImageWrapper,
+  mobileImage,
+  activeMobileImageStyles,
+  hiddenMobileImageStyles,
+  placeholderImg,
 } from "./rowan-red-sky.module.scss";
-import { StaticImage } from "gatsby-plugin-image";
 
 const bio = `<p>Rowan Red Sky (Oneida Nation of the Thames) graduated from the Publications program at OCAD University in 2015. She works as an artist making illustrations that draw from the oral tradition of her Indigenous culture and personal experiences. Maps, the animacy of the land, and the performance of stories inspire her work. In 2020 she started graduate school in the Art History program at the University of Toronto. Her academic research investigates nineteenth-century stereotypical images of Native Americans and American landscapes, and how Indigenous performers and visual artists have responded to these images. Her writing and illustration work has been published by CBC, Shameless Magazine, Canthius, Maisonneuve, and Broadview. Currently, she is planning an exhibition featuring nineteenth-century illustrations of Native Americans, which will be on display at Massey College until December 2022.</p>`;
 
@@ -37,7 +37,7 @@ const srDescriptions = {
 };
 
 const RowanRedSky = ({ data }) => {
-  const { artistName, nameImage } = data.contentfulArtistPage;
+  const { artistName, nameImage, images } = data.contentfulArtistPage;
 
   // track z index number and increase it across all image groups
   const [highestZIndex, setHighestZIndex] = useState(5000);
@@ -55,6 +55,12 @@ const RowanRedSky = ({ data }) => {
   const [waterIsVisible, setWaterIsVisible, waterFadeProps] = useFade();
   const [cityIsVisible, setCityIsVisible, cityFadeProps] = useFade();
   const [weedsIsVisible, setWeedsIsVisible, weedsFadeProps] = useFade();
+  const fadeHookGroups = {
+    land: [landIsVisible, setLandIsVisible, landFadeProps],
+    water: [waterIsVisible, setWaterIsVisible, waterFadeProps],
+    city: [cityIsVisible, setCityIsVisible, cityFadeProps],
+    weeds: [weedsIsVisible, setWeedsIsVisible, weedsFadeProps],
+  };
 
   const handleRevealImages = (e) => {
     const group = e.target.id;
@@ -73,6 +79,35 @@ const RowanRedSky = ({ data }) => {
   };
 
   const [activeImage, setActiveImage] = useState([]);
+  const [activeMobileImage, setActiveMobileImage] = useState("land");
+
+  const mobileImages = images.map((image) => {
+    console.log(fadeHookGroups, image.title);
+    const { id, description, title, gatsbyImageData } = image;
+    const [groupFadeState, setGroupFadeState, groupFadeProps] =
+      fadeHookGroups[title];
+
+    return {
+      id,
+      description,
+      title,
+      gatsbyImageData,
+      fadeHook: [groupFadeState, setGroupFadeState, groupFadeProps],
+    };
+  });
+
+  const handleSwitchMobileImage = (group) => {
+    for (const hook in fadeHookGroups) {
+      const setFader = fadeHookGroups[hook][1];
+      setActiveMobileImage(group);
+
+      if (hook === group) {
+        setFader(true);
+      } else {
+        setFader(false);
+      }
+    }
+  };
 
   return (
     <Layout>
@@ -193,61 +228,73 @@ const RowanRedSky = ({ data }) => {
           mean! In the meantime, catch a glimpse of the fun you could be having
           below. Enjoy!
         </p>
+        <div className={mobileImageWrapper}>
+          <GatsbyImage
+            image={images[0].gatsbyImageData}
+            alt=""
+            className={placeholderImg}
+            aria-hidden={true}
+          />
+          {mobileImages.map((image) => {
+            const fadeGroup = image.fadeHook[0];
+            const fadeProps = image.fadeHook[2];
+            if (fadeGroup) {
+              return (
+                <GatsbyImage
+                  key={image.id}
+                  className={`${fadeProps.className} ${mobileImage} ${
+                    activeMobileImage === image.title
+                      ? activeMobileImageStyles
+                      : hiddenMobileImageStyles
+                  }`}
+                  onAnimationEnd={fadeProps.onAnimationEnd}
+                  image={image.gatsbyImageData}
+                  alt={image.description}
+                />
+              );
+            }
+            return null;
+          })}
+        </div>
         <div className={controlPanel}>
           <button
             id="land"
             aria-label={`Click to ${
-              landIsVisible ? "Hide" : "learn more about"
+              landIsVisible ? "Hide" : "Show"
             } the land images theme`}
-            aria-describedby={landIsVisible ? "land-description" : ""}
             type="button"
-            onClick={(e) => handleRevealImages(e)}
+            onClick={(e) => handleSwitchMobileImage(e.target.id)}
           >
-            <p className="sr-only" id="land-description">
-              {srDescriptions.land}
-            </p>
             ohwʌtsyahuwé
           </button>
           <button
             id="water"
             aria-label={`Click to ${
-              waterIsVisible ? "Hide" : "learn more about"
+              waterIsVisible ? "Hide" : "Show"
             } the water images theme`}
-            aria-describedby={waterIsVisible ? "water-description" : ""}
             type="button"
-            onClick={(e) => handleRevealImages(e)}
+            onClick={(e) => handleSwitchMobileImage(e.target.id)}
           >
-            <p className="sr-only" id="water-description">
-              {srDescriptions.water}
-            </p>
             ohnekanusho:kú
           </button>
           <button
             id="city"
             aria-label={`Click to ${
-              cityIsVisible ? "Hide" : "learn more about"
+              cityIsVisible ? "Hide" : "Show"
             } the city images theme"`}
-            aria-describedby={cityIsVisible ? "city-description" : ""}
             type="button"
-            onClick={(e) => handleRevealImages(e)}
+            onClick={(e) => handleSwitchMobileImage(e.target.id)}
           >
-            <p className="sr-only" id="city-description">
-              {srDescriptions.city}
-            </p>
             kanatowa:nʌ́
           </button>
           <button
             id="weeds"
             aria-label={`Click to ${
-              weedsIsVisible ? "Hide" : "learn more about"
+              weedsIsVisible ? "Hide" : "Show"
             } the weeds images theme"`}
-            aria-describedby={weedsIsVisible ? "weeds-description" : ""}
             type="button"
-            onClick={(e) => handleRevealImages(e)}
+            onClick={(e) => handleSwitchMobileImage(e.target.id)}
           >
-            <p className="sr-only" id="weeds-description">
-              {srDescriptions.weeds}
-            </p>
             wanekláksʌ
           </button>
         </div>
@@ -266,6 +313,12 @@ export const query = graphql`
       nameImage {
         description
         gatsbyImageData
+      }
+      images {
+        id
+        title
+        gatsbyImageData
+        description
       }
     }
   }

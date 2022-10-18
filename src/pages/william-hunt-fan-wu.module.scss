@@ -6,6 +6,12 @@
   @include break('mobile') {
     @include bg-line-art('../assets/flipped-mobile-line-bg.svg', bottom center);
   }
+
+  .instructions {
+    margin: 4rem 0 0;
+    text-align: center;
+    font-weight: 700;
+  }
 }
 
 .images-wrapper {

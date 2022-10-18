@@ -96,7 +96,7 @@ const EveretteFournier = ({ data }) => {
             represent pathways of resistance and loving acts they have
             witnessed. Acts I see as I pass by strangers or acts I have
             experienced myself. The rigged shapes in the coat loosely reference
-            the city’s I dwell, Tkaronto’s (Toronto) Harbourfront, the
+            the cities I dwell, Tkaronto’s (Toronto) Harbourfront, the
             intersection of the Assiniboine River and Red River in Winnipeg
             where I grew up. Lastly dispersed in the coats corners are
             references to the parks in Kjipuktuk (Halifax) where houseless
