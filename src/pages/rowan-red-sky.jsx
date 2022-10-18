@@ -64,18 +64,10 @@ const RowanRedSky = ({ data }) => {
 
   const handleRevealImages = (e) => {
     const group = e.target.id;
-    if (group === "land") {
-      setLandIsVisible(!landIsVisible);
-    }
-    if (group === "water") {
-      setWaterIsVisible(!waterIsVisible);
-    }
-    if (group === "city") {
-      setCityIsVisible(!cityIsVisible);
-    }
-    if (group === "weeds") {
-      setWeedsIsVisible(!weedsIsVisible);
-    }
+    const state = fadeHookGroups[group][0];
+    const setter = fadeHookGroups[group][1];
+
+    setter(!state);
   };
 
   const [activeImage, setActiveImage] = useState([]);

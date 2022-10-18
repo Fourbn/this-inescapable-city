@@ -19,7 +19,7 @@ import {
 const bio = `<p>Laura Gallagher-Doucette is a cofounder of Probably Theatre Collective and co-curator of Probably Poetry performance series. They hold a Master of Divinity from Emmanuel College, a certificate in Creative Writing from Humber College, and a combined-honours in Theatre Studies and Early Modern Studies from the University of King's College. They are pursuing ordination in the United Church of Canada and work as a student minister in Toronto.</p>`;
 
 const LauraGallagherDoucette = ({ data }) => {
-  const { artistName, nameImage, images } = data.contentfulArtistPage;
+  const { artistName, nameImage } = data.contentfulArtistPage;
 
   return (
     <Layout>
@@ -385,9 +385,6 @@ export const query = graphql`
       nameImage {
         gatsbyImageData
         description
-      }
-      images {
-        url
       }
     }
   }

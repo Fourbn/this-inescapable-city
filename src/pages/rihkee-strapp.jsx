@@ -5,6 +5,7 @@ import CrossfadeImage from "react-crossfade-image";
 import Layout from "../components/Layout/Layout";
 import ArtistBio from "../components/ArtistBio/ArtistBio";
 import ArtistPageH1 from "../components/ArtistPageH1/ArtistPageH1";
+import DelayedRender from "../components/DelayedRender/DelayedRender";
 
 import useInterval from "../hooks/useInterval";
 
@@ -13,7 +14,14 @@ import gif2 from "../assets/rihkee/animation2.gif";
 import gif3 from "../assets/rihkee/animation3.gif";
 import gif4 from "../assets/rihkee/animation4.gif";
 
-import { contentSection, image, gif, wrapper, preload, didactic } from "./rihkee-strapp.module.scss";
+import {
+  contentSection,
+  image,
+  gif,
+  wrapper,
+  preload,
+  didactic,
+} from "./rihkee-strapp.module.scss";
 
 const bio = `<p>Rihkee Strapp entered the world from a sea of blood, fully grown wearing a gold set of armour. They are an Ayakwew Red River Metis multi-disciplinary artist raised in Northern Ontario by nohkum’s dial-up internet and its dark vistas. Rihkee is an alumni of the Studio [Y] systems leadership fellowship at the MaRS Discovery District. Their highly collaborative work re-appropriates pop-culture, myth and nostalgia, playing with concepts of time and technology often using humour and character to animate their ideas.</p>`;
 
@@ -82,11 +90,14 @@ const RihkeeStrapp = ({ data }) => {
             alt={gifArray[gifIndex["alt"]]}
             className={gif}
           />
-          <img
-            src={gif4}
-            className={gif}
-            style={gif4Placements[gif4Position]}
-          />
+          <DelayedRender delay={9520}>
+            <img
+              src={gif4}
+              className={gif}
+              style={gif4Placements[gif4Position]}
+              alt=""
+            />
+          </DelayedRender>
         </div>
         <div className={didactic}>
           <h2>About the work</h2>
