@@ -19,9 +19,9 @@ const DesktopHero = ({ desktopHeroImage }) => {
           className={svgStyles}
           aria-labelledby="homepageNavTitle homepageNavDesc"
         >
-          <title id="homepageNavTitle">
+          <p className="sr-only" id="homepageNavTitle">
             Explore the exhibit by clicking on an artist's name
-          </title>
+          </p>
           <desc id="homepageNavDesc">
             An interactive overlay over top of the painted hero image that
             allows you to click on an Artist's name and be brought to their

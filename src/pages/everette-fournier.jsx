@@ -29,8 +29,8 @@ const EveretteFournier = ({ data }) => {
         ))}
         <VideoPlayer url="https://vimeo.com/753127063/501701b396">
           <p>
-            Video Song: Moon on Sill{" "}
-            <span className="italics">by Daniel Dover - Ursa Music</span>
+            Video Song: moon on sill{" "}
+            <span className="italics">by Daniel Dover - Ursa</span>
           </p>
         </VideoPlayer>
         <div className={artistStatement}>
