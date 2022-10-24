@@ -25,6 +25,7 @@ const EveretteFournier = ({ data }) => {
             image={image.gatsbyImageData}
             alt={image.description}
             className={imageStyles}
+            loading="eager"
           />
         ))}
         <VideoPlayer url="https://vimeo.com/753127063/501701b396">

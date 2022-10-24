@@ -45,6 +45,7 @@ const WilliamHuntFanWu = ({ data }) => {
               key={image.id}
               image={image.gatsbyImageData}
               alt={image.description}
+              loading="eager"
             />
           ))}
         </div>

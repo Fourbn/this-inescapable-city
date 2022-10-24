@@ -18,6 +18,7 @@ const ArtistPageH1 = ({ name, image, rihkee }) => {
           image={image.gatsbyImageData}
           alt={image.description}
           className={headingImg}
+          loading="eager"
         />
         {rihkee && (
           <span className={addedText}>
