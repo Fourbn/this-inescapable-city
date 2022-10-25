@@ -10,6 +10,7 @@ const VideoPlayer = ({
   playing = false,
   controls = true,
   muted = false,
+  loop = false,
   onEnded,
   divider = true,
   dividerClass,
@@ -35,6 +36,7 @@ const VideoPlayer = ({
         url={url}
         playing={playing}
         muted={muted}
+        loop={loop}
         onEnded={onEnded}
         controls={controls}
         width="100%"
