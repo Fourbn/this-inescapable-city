@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import useFade from "../hooks/useFade";
 
@@ -27,18 +27,18 @@ const LilionaQuarmyne = ({ data }) => {
 
   const [introIsVisible, setIntroIsVisible, introFadeProps] = useFade(true);
   const [dividerVisible, setDividerVisible, dividerFadeProps] = useFade(true);
+  const [mainVideoPlaying, setMainVideoPlaying] = useState(false);
 
   const handleIntroVideoEnded = () => {
     setDividerVisible(false);
     setIntroIsVisible(false);
+    setMainVideoPlaying(true);
   };
 
   return (
     <Layout>
       <ArtistPageH1 image={nameImage} name={artistName} />
-      <section
-        className={contentSection}
-      >
+      <section className={contentSection}>
         <div className={`${videoWrapper} grid-wrapper`}>
           {introIsVisible && (
             <div
@@ -49,6 +49,7 @@ const LilionaQuarmyne = ({ data }) => {
                 url="https://vimeo.com/753124670/249c954997"
                 onEnded={handleIntroVideoEnded}
                 playing
+                muted
                 controls={false}
                 divider={false}
               />
@@ -63,6 +64,7 @@ const LilionaQuarmyne = ({ data }) => {
           <VideoPlayer
             url="https://vimeo.com/753125894/f16b9f1293"
             dividerClass={white}
+            playing={mainVideoPlaying}
           />
         </div>
       </section>

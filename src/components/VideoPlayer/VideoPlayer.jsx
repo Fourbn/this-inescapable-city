@@ -9,6 +9,7 @@ const VideoPlayer = ({
   url,
   playing = false,
   controls = true,
+  muted = false,
   onEnded,
   divider = true,
   dividerClass,
@@ -32,6 +33,7 @@ const VideoPlayer = ({
       <ReactPlayer
         url={url}
         playing={playing}
+        muted={muted}
         onEnded={onEnded}
         controls={controls}
         width="100%"
