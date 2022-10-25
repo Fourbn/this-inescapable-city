@@ -15,7 +15,8 @@
   h3 {
     font-size: 3.2rem;
     font-weight: normal;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
+    padding-left: 5px;
     width: 48px;
     text-align: right;
 
@@ -30,6 +31,14 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+  }
+}
+
+.video-wrapper {
+  @include break('mobile') {
+    position: sticky;
+    top: 0;
+    z-index: 99;
   }
 }
 
@@ -64,6 +73,10 @@
     grid-column: 6 / -6;
     background-color: $grey-bg;
     margin-bottom: 1.5rem;
+
+    @include break('tablet') {
+      grid-column: 2 / -2;
+    }
 
     &.active {
       background-color: tint($thistle, 30%);

@@ -13,6 +13,7 @@ const VideoPlayer = ({
   onEnded,
   divider = true,
   dividerClass,
+  className,
   // label,
   // description,
   // captions,
@@ -24,7 +25,7 @@ const VideoPlayer = ({
   };
 
   return (
-    <div className={videoWrapper}>
+    <div className={`${videoWrapper} ${className ? className : ''}`}>
       <div
         className={`${dividerStyles} ${dividerClass} ${hideDivider ? "fading-out" : ""} ${
           divider ? "" : noDivider

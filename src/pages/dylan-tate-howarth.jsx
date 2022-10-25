@@ -16,6 +16,7 @@ import {
   transcriptSection,
   active,
   disabled,
+  videoWrapper,
 } from "./dylan-tate-howarth.module.scss";
 
 const bio = `<p>Dylan Tate-Howarth is a theatre artist and poet based in Toronto. She works as a stage manager primarily for new and/or devised theatre. Selected stage management credits include Two Birds One Stone (Two Birds Theatre); Italian Mime Suicide, and Flashing Lights (Bad New Days); Broken Shapes (The Theatre Centre); and White Girls in Moccasins (manidoons collective and Buddies in Bad Times). Dylan is a co-creator of Probably Theatre Collective and co-curator of Probably Poetry.</p>`;
@@ -57,7 +58,7 @@ const DylanTateHowarth = ({ data }) => {
             you like. There is a transcript further down the page.
           </p>
         </div>
-        <VideoPlayer url="https://vimeo.com/755582532/7accf22b5d" />
+        <VideoPlayer url="https://vimeo.com/755582532/7accf22b5d" className={videoWrapper} />
         <ol className={`${cardGrid} grid-wrapper`}>
           {content.map((audioGroup) => (
             <li
