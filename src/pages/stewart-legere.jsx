@@ -38,7 +38,6 @@ const StewartLegere = ({ data }) => {
           playing
           label="ambient vocal sounds and shots of city scapes"
           description={videoDescr}
-          loop
         >
           <p>
             Filmed and edited by <span className="italics">Stewart Legere</span>
