@@ -1,40 +1,59 @@
-import React, { useEffect, useState } from "react";
-import { graphql, Link } from "gatsby";
-import useFade from "../hooks/useFade";
+// import React, { useEffect, useState } from "react";
+import React from "react";
+// import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+// import useFade from "../hooks/useFade";
 
-import DesktopHero from "../components/DesktopHero/DesktopHero";
-import MobileHero from "../components/MobileHero/MobileHero";
-import Footer from "../components/Footer/Footer";
-import MobileWarningModal from "../components/MobileWarningModal/MobileWarningModal";
-import DelayedRender from "../components/DelayedRender/DelayedRender";
+// import DesktopHero from "../components/DesktopHero/DesktopHero";
+// import MobileHero from "../components/MobileHero/MobileHero";
+// import Footer from "../components/Footer/Footer";
+// import MobileWarningModal from "../components/MobileWarningModal/MobileWarningModal";
+// import DelayedRender from "../components/DelayedRender/DelayedRender";
 
-import { hero, bgWrapper, extraNav } from "./index.module.scss";
+// import { hero, bgWrapper, extraNav } from "./index.module.scss";
+import { thanksMsg } from "./index.module.scss";
 
 const IndexPage = ({ data }) => {
-  const { images } = data.contentfulSitePage;
-  const [desktopHeroImg, mobileHeroImg] = images;
+  // const { images } = data.contentfulSitePage;
+  // const [desktopHeroImg, mobileHeroImg] = images;
 
-  const [renderModal, setRenderModal] = useState(false);
-  const [modalVisible, setModalVisible, modalFadeProps] = useFade(true);
+  // const [renderModal, setRenderModal] = useState(false);
+  // const [modalVisible, setModalVisible, modalFadeProps] = useFade(true);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window) {
-      const { sessionStorage } = window;
+  // useEffect(() => {
+  //   if (typeof window !== "undefined" && window) {
+  //     const { sessionStorage } = window;
 
-      const alreadyVisitedHomepage = sessionStorage.getItem("visited");
+  //     const alreadyVisitedHomepage = sessionStorage.getItem("visited");
 
-      if (alreadyVisitedHomepage) {
-        setRenderModal(false);
-      } else {
-        setRenderModal(true);
-        sessionStorage.setItem("visited", "true");
-      }
-    }
-  }, []);
+  //     if (alreadyVisitedHomepage) {
+  //       setRenderModal(false);
+  //     } else {
+  //       setRenderModal(true);
+  //       sessionStorage.setItem("visited", "true");
+  //     }
+  //   }
+  // }, []);
 
   return (
     <>
-      {renderModal && modalVisible && (
+      <div className={thanksMsg}>
+        <h1>
+          Thank you for supporting <span>This Inescapable City!</span>
+        </h1>
+        <p>
+          The installation is now closed to the public, but if you want to
+          continue to support Probably Theatre you can visit{" "}
+          <a href="https://www.probablytheatre.com" rel="noopener noreferrer">
+            their website
+          </a>{" "}
+          or follow them on{" "}
+          <a href="https://www.instagram.com/probablytheatre/?hl=en" rel="noopener noreferrer">
+            instagram.
+          </a>
+        </p>
+      </div>
+      {/* {renderModal && modalVisible && (
         <DelayedRender delay={1700}>
           <MobileWarningModal
             setModalVisible={setModalVisible}
@@ -61,7 +80,7 @@ const IndexPage = ({ data }) => {
           </ul>
         </nav>
       </main>
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

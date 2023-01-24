@@ -87,3 +87,18 @@
     }
   }
 }
+
+.thanks-msg {
+  text-align: center;
+  padding: 10rem 0;
+
+  h1 span {
+    display: block;
+  }
+
+  p {
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 2rem;
+  }
+}
